@@ -1,0 +1,29 @@
+<section class= "navigationbar">
+    <!-- Nav Bar -->
+    <nav class = "navbar navbar-expand-sm bg-dark navbar-dark sticky-top"  >
+       <ul class="navbar-nav mr-auto">
+                <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                <%= user.name %>
+                </a>
+                <div class="dropdown-menu">
+                <a href="home" class="dropdown-item">Dashboard</a>
+                <a class="dropdown-item" href="#">My Grades</a>
+                <a class="dropdown-item" href="#">My Schedule</a>
+                <a class="dropdown-item" href="#">Schedule Plan</a>
+                <a class="dropdown-item bg-danger text-white" href="/logout">Logout</a>
+                </div>
+            </li>
+           <li class="navbar-item active"><a href="/classdir" class="nav-link">Course Directory</a></li>
+       </ul>
+       <a href="/home" class="navbar-brand mx-auto signinlogo" >Logo</a>
+    
+       <ul class="navbar-nav topbar-right ml-auto">
+           <li class="navbar-item active "><a class = "nav-link" href="/">About</a></li>
+           <li class="navbar-item active "><a class = "nav-link" href="/">Contact</a></li>
+       </ul>
+    </nav>
+   
+
+   </section>

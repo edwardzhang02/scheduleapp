@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Untitled</title>
+    <link rel="stylesheet" href="\font-awesome-4.7.0\css\font-awesome.min.css">
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+   />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap" rel="stylesheet">
+   <meta name="google-signin-scope" content="profile email">
+   <meta name="google-signin-client_id" content="854171680221-mjhdnc59sdf4bdqu6e5ceg1aub57u114.apps.googleusercontent.com">
+   <script src="https://apis.google.com/js/platform.js" async defer></script>
+   <script src="script.js"></script>
+   <style>.g-signin2{margin-left: 785px;margin-top:200px;}
+   .data{
+       display:none;
+   }
+       </style>
+
+</head>
+<body>
+    <section class= "navigationbar">
+        <!-- Nav Bar -->
+        <nav class = "navbar navbar-expand-sm bg-dark navbar-dark sticky-top"  >
+           <ul class="navbar-nav mr-auto">
+               <li class="navbar-item active" data-toggle="modal" data-target="#myModal"><a href="#" class="nav-link">Login</a></li>
+               <li class="navbar-item active"><a href="signup.html" class="nav-link">Sign-Up</a></li>
+           </ul>
+           <a href="index.html" class="navbar-brand mx-auto" >Logo</a>
+        
+           <ul class="navbar-nav topbar-right ml-auto">
+               <li class="navbar-item active "><a class = "nav-link" href="#">About</a></li>
+               <li class="navbar-item active "><a class = "nav-link" href="#">Contact</a></li>
+           </ul>
+        </nav>
+       
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+           <div class="modal-dialog modal-dialog-centered">
+             <div class="modal-content">
+         
+               <!-- Modal Header -->
+               <div class="modal-header">
+                 <h4 class="modal-title">Sign In</h4>
+                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+               </div>
+         
+               <!-- Modal body -->
+               <div class="modal-body">
+                 <label for="signin-username">Username</label>
+                 <input type="text" name = "username" id = "username">
+                 <label for="signin-password">Password</label>
+                 <input type="password" name="password" id="password">
+                 <button type="button" class="btn btn-success signupbtn btn-xs">
+                   <p class = "signupbutton">Sign In</p>  
+               </button>
+               </div>
+         
+               <!-- Modal footer -->
+               <div class="modal-footer">
+                 <button type="button" class="btn btn-danger forgotpwordbtn">Forgot Password?</button>
+               </div>
+         
+             </div>
+           </div>
+         </div>
+       </section>
+       
+</body>
+</html>

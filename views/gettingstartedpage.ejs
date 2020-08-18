@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Untitled</title>
+    <link rel="stylesheet" href="\font-awesome-4.7.0\css\font-awesome.min.css">
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+   />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap" rel="stylesheet">
+   <meta name="google-signin-scope" content="profile email">
+   <meta name="google-signin-client_id" content="854171680221-mjhdnc59sdf4bdqu6e5ceg1aub57u114.apps.googleusercontent.com">
+   <script src="https://apis.google.com/js/platform.js" async defer></script>
+   <script src="script.js"></script>
+   <style>.g-signin2{margin-left: 785px;margin-top:200px;}
+   .data{
+       display:none;
+   }
+       </style>
+
+</head>
+<body>
+    <%- include('nav'); -%>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class = welcomescreen>
+        <h1 class = "welcomemessage"> <%= success_msg %></h1>
+        <br>
+        <br>
+        <div class ="getstartedloginbutton">
+            <a href="/login">
+                <button type="button btn-lg" class="btn btn-success" >Click Here to log in!</button>
+            </a>
+        </div>
+    </div>
+       
+</body>
+</html>

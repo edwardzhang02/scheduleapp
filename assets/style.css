@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* font-family: "Quicksand", sans-serif; */
+}
+
+.home {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: #184d1b;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.about {
+}
+.about-container {
+  text-align: center;
+}
+.about-title {
+  display: inline;
+  font-family: "Quicksand", sans-serif;
+  font-size: 70px;
+}
+.title {
+  color: white;
+  position: absolute;
+  border-style: solid;
+  border-width: 3px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.about-paragraph {
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+}
+.learnmorebtn {
+  width: 400px;
+  height: 100px;
+}
+.getstartedbutton {
+  font-family: "Quicksand", sans-serif;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 15px;
+}
+.signuptext {
+  font-family: "Quicksand", sans-serif;
+  font-size: 30px;
+  text-align: center;
+}
+.form-name {
+  text-align: center;
+}
+.sign-in-form {
+  max-width: 400px;
+  margin: 2rem auto;
+  border: 1px solid;
+  border-color: gray;
+  padding: 2rem;
+  border-radius: 10px;
+}
+input,
+label {
+  display: block;
+  font-family: "Quicksand", sans-serif;
+}
+input {
+  outline: none;
+}
+input[type="text"],
+input[type="password"] {
+  font-family: "Quicksand", sans-serif;
+  width: 100%;
+  padding: 6px 10px;
+  margin: 7px 0;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.signupbtn {
+  width: 100%;
+  height: 50px;
+}
+.signupbutton {
+  font-family: "Quicksand", sans-serif;
+  font-size: 15px;
+  padding-bottom: 0px;
+  width: 100%;
+  height: 40px;
+  background-color: #14a33b;
+  color: white;
+  border-radius: 5px;
+}
+.forgotpwordbtn {
+  float: left;
+  font-family: "Quicksand", sans-serif;
+}
+.welcomemessage{
+  font-family: "Quicksand", sans-serif;
+  text-align: center;
+}
+.getstartedloginbutton{
+  text-align: center;
+  margin:auto;
+}
+.welcomescreen{
+  width: 70%;
+  margin: 2rem auto;
+  border: 1px solid;
+  border-color: gray;
+  padding: 2rem;
+  border-radius: 10px;
+}
+.signinform{
+  width: 30%;
+  margin: 2rem auto;
+  border: 1px solid;
+  border-color: gray;
+  padding: 2rem;
+  border-radius: 5px;
+  background-color: white
+}
+.loginhome{
+  background-color: #2b2b2b;
+}
+.logintext{
+  font-size: 42px;
+}
+.signinlogo{
+  padding-right: 140px;
+}
+ .card-left{
+height: 350px;
+
+}
+
+.card-columns{
+  margin-left:20px;
+  margin-right: 20px;
+  font-family: "Quicksand", sans-serif;
+  text-align: center;
+}
+.card-title{
+  font-weight:bold;
+
+}
+.dirtitle{
+  text-align: center;
+}
+.homecolumns{
+  border: 1px solid;
+  border-color:gray ;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  border-radius: 5px;
+
+}
+.pcoursestxt{
+  width:70%;
+  float: right;
+  margin-top: 15px;
+}
+.grade10form{
+  width: 40%;
+  margin: 2rem auto;
+  border: 1px solid;
+  border-color: gray;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: white
+}
+.pastcourselabel{
+  margin-bottom: -15px;
+  margin-top: 15px;
+}
+.savepastcourses{
+  margin:auto;
+  text-align: center;
+  margin-left: 175px;
+  width: 200px;
+}
+.pastcoursesubmitbutton{
+  font-family: "Quicksand", sans-serif;
+  font-size: 15px;
+  padding-bottom: 0px;
+  width: 100%;
+  height: 40px;
+  background-color:#346beb;
+  color: white;
+  border-radius: 5px;
+
+}
+.urclasses{
+  font-family: "Quicksand", sans-serif;
+  text-align: center;
+  font-size: 18px;;
+}
+.finalcolumns{
+  margin: 2rem auto;
+  border: 1px solid;
+  border-color: gray;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: white
+}
+.gradrequirements{
+  margin: 2rem auto;
+  border: 1px solid;
+  border-color: gray;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: white
+}
+.gradbutton{
+  width:100
+}
+.gradreqalert{
+  color:red;
+}

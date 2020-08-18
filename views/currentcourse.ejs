@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" type="text/css" href="style.css" />
+ <title>Untitled</title>
+ <link rel="stylesheet" href="\font-awesome-4.7.0\css\font-awesome.min.css">
+ <link
+ rel="stylesheet"
+ href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+<head>
+<body>
+    <%- include('signedinnav'); -%>
+    <br>
+    <br>
+    <h1 style="text-align: center; font-family: 'Questrial', sans-serif;">Current Courses</h1>
+    <div class="grade10form">
+            
+    <% if(user.grade == 9){ %>
+        <% if(user.class1 == null) { %>
+            <form action="/9thgradecurrentcourse" method="POST" class="pastcoursesform">
+                <label for="class1" class="pastcourselabel">Freshman Year Class 1:</label>
+                <input type="text" name = 'class1' id='class1' list="datalist1" value="">
+                  
+                <label for="class2" class="pastcourselabel">Freshman Year Class 2:</label>
+                <input type="text" name = 'class2' id = 'class2' list="datalist1" value="">
+
+                <label for="class3" class="pastcourselabel">Freshman Year Class 3:</label>
+                <input type="text" name = 'class3' id = 'class3' list="datalist1" value="">
+
+                <label for="class4" class="pastcourselabel">Freshman Year Class 4:</label>
+                <input type="text" name = 'class4' id='class4' list="datalist1" value="">
+
+                <label for="class5" class="pastcourselabel">Freshman Year Class 5:</label>
+                <input type="text" name='class5' id='class5' list="datalist1" value="">
+
+                <label for="class6" class="pastcourselabel">Freshman Year Class 6:</label>
+                <input type="text" name='class6' id='class6' list="datalist1" value="">
+
+                <datalist id="datalist1">
+                    <option value="Language Arts I"></option>
+                    <option value="Language Arts I Honors"></option>
+                    <option value="Language Arts II"></option>
+                    <option value="Language Arts II Honors"></option>
+                    <option value="Language Arts III"></option>
+                    <option value="Langauge Arts III Honors"></option>
+                    <option value="Language Arts IV"></option>
+                    <option value="Language Arts IV Honors"></option>
+                    <option value="AP Language and Composition"></option>
+                    <option value="AP Literature and Composition"></option>
+                    <option value="Algebra I"></option>
+                    <option value="Geometry"></option>
+                    <option value="Geometry Honors"></option>
+                    <option value="Geometry Honors & Accelerated"></option>
+                    <option value="Algebra II"></option>
+                    <option value="Advanced Algebra II"></option>
+                    <option value="Advanced Algebra II Honors"></option>
+                    <option value="Algebra and Trigonometry"></option>
+                    <option value="Pre-calculus"></option>
+                    <option value="Pre-calculus Honors"></option>
+                    <option value="Pre-calculus Honors & Accelerated"></option>
+                    <option value="Calculus Honors"></option>
+                    <option value="AP Calculus AB"></option>
+                    <option value="AP Calculus BC"></option>
+                    <option value="Multivariable Calculus Honors"></option>
+                    <option value="Statistics"></option>
+                    <option value="AP Statistics"></option>
+                    <option value="Biology"></option>
+                    <option value="Biology Honors"></option>
+                    <option value="AP Biology"></option>
+                    <option value="Chemistry"></option>
+                    <option value="Chemistry Honors"></option>
+                    <option value="AP Chemistry"></option>
+                    <option value="Physics"></option>
+                    <option value="Physics Honors"></option>
+                    <option value="Advanced Topics in Physics Honors"></option>
+                    <option value="Environmental Science"></option>
+                    <option value="AP Environmental Science"></option>
+                    <option value="Forensic Sciences"></option>
+                    <option value="Human Anatomy & Physiology"></option>
+                    <option value="Descriptive Astronomy"></option>
+                    <option value="Genetics"></option>
+                    <option value="World History"></option>
+                    <option value="World History Honors"></option>
+                    <option value="American Studies I"></option>
+                    <option value="American Studies I Honors"></option>
+                    <option value="American Studies II"></option>
+                    <option value="American Studies II Honors"></option>
+                    <option value="AP US History"></option>
+                    <option value="AP European History"></option>
+                    <option value="AP American Government"></option>
+                    <option value="International Business and Cultures"></option>
+                    <option value="Legal and Political Experiences"></option>
+                    <option value="AP Comparative Government and Global Studies"></option>
+                    <option value="Economics/Social Problems in American Society"></option>
+                    <option value="Multicultural Studies"></option>
+                    <option value="AP Microeconomics"></option>
+                    <option value="AP Psychology"></option>
+                    <option value="Human Behavior"></option>
+                    <option value="An Intro to Spanish Communication & Culture"></option>
+                    <option value="Spanish Language & Cultural Study"></option>
+                    <option value="Spanish 1"></option>
+                    <option value="Spanish 2"></option>
+                    <option value="Spanish 3"></option>
+                    <option value="Spanish 3 Honors"></option>
+                    <option value="Spanish 4 "></option>
+                    <option value="Spanish 4 Honors"></option>
+                    <option value="Spanish 5"></option>
+                    <option value="Conversations in Spanish"></option>
+                    <option value="Honors Spanish Cultural Studies"></option>
+                    <option value="AP Spanish Language"></option>
+                    <option value="AP Spanish Literature"></option>
+                    <option value="French 1"></option>
+                    <option value="French 2"></option>
+                    <option value="French 3"></option>
+                    <option value="French 3 Honors"></option>
+                    <option value="French 4"></option>
+                    <option value="French 4 Honors"></option>
+                    <option value="French 5"></option>
+                    <option value="AP French Language"></option>
+                    <option value="German 1"></option>
+                    <option value="German 2"></option>
+                    <option value="German 3"></option>
+                    <option value="German 4"></option>
+                    <option value="German 5 Honors"></option>
+                    <option value="AP German Language"></option>
+                    <option value="Chinese 1"></option>
+                    <option value="Chinese 2"></option>
+                    <option value="Chinese 3"></option>
+                    <option value="Chinese 4"></option>
+                    <option value="Chinese 5 Honors"></option>
+                    <option value="AP Chinese Language"></option>
+                    <option value="Art Foundation"></option>
+                    <option value="Drawing & Painting I"></option>
+                    <option value="Drawing & Painting II"></option>
+                    <option value="Sculpture & Ceramics"></option>
+                    <option value="Printmaking"></option>
+                    <option value="Computer Art & Design"></option>
+                    <option value="Computer Art & Design II"></option>
+                    <option value="Photography"></option>
+                    <option value="AP Studio Art"></option>
+                    <option value="AP Art History"></option>
+                    <option value="Accounting"></option>
+                    <option value="Marketing"></option>
+                    <option value="Digital Communication"></option>
+                    <option value="Financial Literacy"></option>
+                    <option value="Digital Media"></option>
+                    <option value="Introduction to Computer Programming"></option>
+                    <option value="AP Computer Science A"></option>
+                    <option value="AP Computer Science Principles"></option>
+                    <option value="Advanced Topics in Computer Science Honors"></option>
+                    <option value="Principles of Engineering"></option>
+                    <option value="Graphic Engineering"></option>
+                    <option value="Engineering Design and Fabrication"></option>
+                    <option value="Robotics Engineering"></option>
+                    <option value="Creative Design"></option>
+                    <option value="Advanced Creative Design"></option>
+                    <option value="Culinary Arts"></option>
+                    <option value="International Foods"></option>
+                    <option value="Creative Cooking and Catering"></option>
+                    <option value="Child Growth and Development"></option>
+                    <option value="Youth Teaching Youth"></option>
+                    <option value="Music Theory I"></option>
+                    <option value="Music Theory II"></option>
+                    <option value="Music Technology"></option>
+                    <option value="Chorale"></option>
+                    <option value="Concert Choir"></option>
+                    <option value="Chamber Choir"></option>
+                    <option value="Concert Band"></option>
+                    <option value="Symphonic Band"></option>
+                    <option value="Wind Ensemble"></option>
+                    <option value="String Ensemble"></option>
+                    <option value="Symphony Orchestra"></option>
+                    <option value="Philharmonic Orchestra"></option>
+                    <option value="Broadcast Writing"></option>
+                    <option value="Advanced Broadcast Writing"></option>
+                    <option value="TV Production"></option>
+                    <option value="Journalism"></option>
+                    <option value="Advanced Journalism Honors"></option>
+                    <option value="Fundamentals of Sports Medicine"></option>
+                    <option value="Theatre Arts"></option>
+                    <option value="Princeton Unversity Courses"></option>
+                    <option value="Student Research"></option>
+                </datalist>
+                <br>
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col"> <input type="submit" value="Save" class = pastcoursesubmitbutton></div>
+                    <div class="col-4"></div>
+        
+                </div>
+            </form>
+       <% } else{ %>
+        <h3 style="text-align: center; font-family:'Questrial', sans-serif;">Freshman Year:</h3>
+        <div class="urclasses">
+            <p><%= user.class1 %></p>
+            <hr>
+            <p><%= user.class2 %></p>
+            <hr>
+            <p><%= user.class3 %></p>
+            <hr>
+            <p><%= user.class4 %></p>
+            <hr>
+            <p><%= user.class5%></p>
+            <hr>
+            <p><%= user.class6 %></p>
+            <hr>
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col"> <a href="/editcurrentcourse"><button type="button" class="btn btn-primary">Edit Courses</button></a></div>
+                <div class="col-4"></div>
+    
+            </div>
+        </div>
+       <% }%>
+      
+       
+   <% } else if(user.grade == 10){%>
+    <% if(user.class7 == null){%>
+        <form action="/10thgradecurrentcourse" method="POST" class="pastcoursesform">
+            <label for="class7" class="pastcourselabel">Class 1:</label>
+            <input type="text" name = 'class7' id='class7' list="datalist1" value="">
+ 
+            <label for="class8" class="pastcourselabel">Class 2:</label>
+            <input type="text" name = 'class8' id = 'class8' list="datalist1" value="">
+ 
+            <label for="class9" class="pastcourselabel">Class 3:</label>
+            <input type="text" name = 'class9' id = 'class9' list="datalist1" value="">
+ 
+            <label for="class10" class="pastcourselabel">Class 4:</label>
+            <input type="text" name = 'class10' id='class10' list="datalist1" value="">
+ 
+            <label for="class11" class="pastcourselabel">Class 5:</label>
+            <input type="text" name='class11' id='class11' list="datalist1" value="">
+ 
+            <label for="class12" class="pastcourselabel">Class 6:</label>
+            <input type="text" name='class12' id='class12' list="datalist1" value="">
+ 
+            <datalist id="datalist1">
+                <option value="Language Arts I"></option>
+                <option value="Language Arts I Honors"></option>
+                <option value="Language Arts II"></option>
+                <option value="Language Arts II Honors"></option>
+                <option value="Language Arts III"></option>
+                <option value="Langauge Arts III Honors"></option>
+                <option value="Language Arts IV"></option>
+                <option value="Language Arts IV Honors"></option>
+                <option value="AP Language and Composition"></option>
+                <option value="AP Literature and Composition"></option>
+                <option value="Algebra I"></option>
+                <option value="Geometry"></option>
+                <option value="Geometry Honors"></option>
+                <option value="Geometry Honors & Accelerated"></option>
+                <option value="Algebra II"></option>
+                <option value="Advanced Algebra II"></option>
+                <option value="Advanced Algebra II Honors"></option>
+                <option value="Algebra and Trigonometry"></option>
+                <option value="Pre-calculus"></option>
+                <option value="Pre-calculus Honors"></option>
+                <option value="Pre-calculus Honors & Accelerated"></option>
+                <option value="Calculus Honors"></option>
+                <option value="AP Calculus AB"></option>
+                <option value="AP Calculus BC"></option>
+                <option value="Multivariable Calculus Honors"></option>
+                <option value="Statistics"></option>
+                <option value="AP Statistics"></option>
+                <option value="Biology"></option>
+                <option value="Biology Honors"></option>
+                <option value="AP Biology"></option>
+                <option value="Chemistry"></option>
+                <option value="Chemistry Honors"></option>
+                <option value="AP Chemistry"></option>
+                <option value="Physics"></option>
+                <option value="Physics Honors"></option>
+                <option value="Advanced Topics in Physics Honors"></option>
+                <option value="Environmental Science"></option>
+                <option value="AP Environmental Science"></option>
+                <option value="Forensic Sciences"></option>
+                <option value="Human Anatomy & Physiology"></option>
+                <option value="Descriptive Astronomy"></option>
+                <option value="Genetics"></option>
+                <option value="World History"></option>
+                <option value="World History Honors"></option>
+                <option value="American Studies I"></option>
+                <option value="American Studies I Honors"></option>
+                <option value="American Studies II"></option>
+                <option value="American Studies II Honors"></option>
+                <option value="AP US History"></option>
+                <option value="AP European History"></option>
+                <option value="AP American Government"></option>
+                <option value="International Business and Cultures"></option>
+                <option value="Legal and Political Experiences"></option>
+                <option value="AP Comparative Government and Global Studies"></option>
+                <option value="Economics/Social Problems in American Society"></option>
+                <option value="Multicultural Studies"></option>
+                <option value="AP Microeconomics"></option>
+                <option value="AP Psychology"></option>
+                <option value="Human Behavior"></option>
+                <option value="An Intro to Spanish Communication & Culture"></option>
+                <option value="Spanish Language & Cultural Study"></option>
+                <option value="Spanish 1"></option>
+                <option value="Spanish 2"></option>
+                <option value="Spanish 3"></option>
+                <option value="Spanish 3 Honors"></option>
+                <option value="Spanish 4 "></option>
+                <option value="Spanish 4 Honors"></option>
+                <option value="Spanish 5"></option>
+                <option value="Conversations in Spanish"></option>
+                <option value="Honors Spanish Cultural Studies"></option>
+                <option value="AP Spanish Language"></option>
+                <option value="AP Spanish Literature"></option>
+                <option value="French 1"></option>
+                <option value="French 2"></option>
+                <option value="French 3"></option>
+                <option value="French 3 Honors"></option>
+                <option value="French 4"></option>
+                <option value="French 4 Honors"></option>
+                <option value="French 5"></option>
+                <option value="AP French Language"></option>
+                <option value="German 1"></option>
+                <option value="German 2"></option>
+                <option value="German 3"></option>
+                <option value="German 4"></option>
+                <option value="German 5 Honors"></option>
+                <option value="AP German Language"></option>
+                <option value="Chinese 1"></option>
+                <option value="Chinese 2"></option>
+                <option value="Chinese 3"></option>
+                <option value="Chinese 4"></option>
+                <option value="Chinese 5 Honors"></option>
+                <option value="AP Chinese Language"></option>
+                <option value="Art Foundation"></option>
+                <option value="Drawing & Painting I"></option>
+                <option value="Drawing & Painting II"></option>
+                <option value="Sculpture & Ceramics"></option>
+                <option value="Printmaking"></option>
+                <option value="Computer Art & Design"></option>
+                <option value="Computer Art & Design II"></option>
+                <option value="Photography"></option>
+                <option value="AP Studio Art"></option>
+                <option value="AP Art History"></option>
+                <option value="Accounting"></option>
+                <option value="Marketing"></option>
+                <option value="Digital Communication"></option>
+                <option value="Financial Literacy"></option>
+                <option value="Digital Media"></option>
+                <option value="Introduction to Computer Programming"></option>
+                <option value="AP Computer Science A"></option>
+                <option value="AP Computer Science Principles"></option>
+                <option value="Advanced Topics in Computer Science Honors"></option>
+                <option value="Principles of Engineering"></option>
+                <option value="Graphic Engineering"></option>
+                <option value="Engineering Design and Fabrication"></option>
+                <option value="Robotics Engineering"></option>
+                <option value="Creative Design"></option>
+                <option value="Advanced Creative Design"></option>
+                <option value="Culinary Arts"></option>
+                <option value="International Foods"></option>
+                <option value="Creative Cooking and Catering"></option>
+                <option value="Child Growth and Development"></option>
+                <option value="Youth Teaching Youth"></option>
+                <option value="Music Theory I"></option>
+                <option value="Music Theory II"></option>
+                <option value="Music Technology"></option>
+                <option value="Chorale"></option>
+                <option value="Concert Choir"></option>
+                <option value="Chamber Choir"></option>
+                <option value="Concert Band"></option>
+                <option value="Symphonic Band"></option>
+                <option value="Wind Ensemble"></option>
+                <option value="String Ensemble"></option>
+                <option value="Symphony Orchestra"></option>
+                <option value="Philharmonic Orchestra"></option>
+                <option value="Broadcast Writing"></option>
+                <option value="Advanced Broadcast Writing"></option>
+                <option value="TV Production"></option>
+                <option value="Journalism"></option>
+                <option value="Advanced Journalism Honors"></option>
+                <option value="Fundamentals of Sports Medicine"></option>
+                <option value="Theatre Arts"></option>
+                <option value="Princeton Unversity Courses"></option>
+                <option value="Student Research"></option>
+            </datalist>
+            <br>
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col"> <input type="submit" value="Save" class = pastcoursesubmitbutton></div>
+                <div class="col-4"></div>
+    
+            </div>
+        </form>
+    <% } else{%>
+        <h3 style="text-align: center; font-family:'Questrial', sans-serif;">Current Courses:</h3>
+        <div class="urclasses">
+            <p><%= user.class7 %></p>
+            <hr>
+            <p><%= user.class8 %></p>
+            <hr>
+            <p><%= user.class9 %></p>
+            <hr>
+            <p><%= user.class10 %></p>
+            <hr>
+            <p><%= user.class11%></p>
+            <hr>
+            <p><%= user.class12 %></p>
+            <hr>
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col"> <a href="/editcurrentcourse"><button type="button" class="btn btn-primary">Edit Courses</button></a></div>
+                <div class="col-4"></div>
+    
+            </div>
+        </div>
+  <%  }%>
+
+  <% } else if(user.grade == 11){ %>
+        <% if(user.class13 == null){%>
+            <form action="/11thgradecurrentcourse" method="POST" class="pastcoursesform">
+                <label for="class7" class="pastcourselabel">Class 1:</label>
+                <input type="text" name = 'class7' id='class7' list="datalist1" value="">
+     
+                <label for="class8" class="pastcourselabel">Class 2:</label>
+                <input type="text" name = 'class8' id = 'class8' list="datalist1" value="">
+     
+                <label for="class9" class="pastcourselabel">Class 3:</label>
+                <input type="text" name = 'class9' id = 'class9' list="datalist1" value="">
+     
+                <label for="class10" class="pastcourselabel">Class 4:</label>
+                <input type="text" name = 'class10' id='class10' list="datalist1" value="">
+     
+                <label for="class11" class="pastcourselabel">Class 5:</label>
+                <input type="text" name='class11' id='class11' list="datalist1" value="">
+     
+                <label for="class12" class="pastcourselabel">Class 6:</label>
+                <input type="text" name='class12' id='class12' list="datalist1" value="">
+     
+                <datalist id="datalist1">
+                    <option value="Language Arts I"></option>
+                    <option value="Language Arts I Honors"></option>
+                    <option value="Language Arts II"></option>
+                    <option value="Language Arts II Honors"></option>
+                    <option value="Language Arts III"></option>
+                    <option value="Langauge Arts III Honors"></option>
+                    <option value="Language Arts IV"></option>
+                    <option value="Language Arts IV Honors"></option>
+                    <option value="AP Language and Composition"></option>
+                    <option value="AP Literature and Composition"></option>
+                    <option value="Algebra I"></option>
+                    <option value="Geometry"></option>
+                    <option value="Geometry Honors"></option>
+                    <option value="Geometry Honors & Accelerated"></option>
+                    <option value="Algebra II"></option>
+                    <option value="Advanced Algebra II"></option>
+                    <option value="Advanced Algebra II Honors"></option>
+                    <option value="Algebra and Trigonometry"></option>
+                    <option value="Pre-calculus"></option>
+                    <option value="Pre-calculus Honors"></option>
+                    <option value="Pre-calculus Honors & Accelerated"></option>
+                    <option value="Calculus Honors"></option>
+                    <option value="AP Calculus AB"></option>
+                    <option value="AP Calculus BC"></option>
+                    <option value="Multivariable Calculus Honors"></option>
+                    <option value="Statistics"></option>
+                    <option value="AP Statistics"></option>
+                    <option value="Biology"></option>
+                    <option value="Biology Honors"></option>
+                    <option value="AP Biology"></option>
+                    <option value="Chemistry"></option>
+                    <option value="Chemistry Honors"></option>
+                    <option value="AP Chemistry"></option>
+                    <option value="Physics"></option>
+                    <option value="Physics Honors"></option>
+                    <option value="Advanced Topics in Physics Honors"></option>
+                    <option value="Environmental Science"></option>
+                    <option value="AP Environmental Science"></option>
+                    <option value="Forensic Sciences"></option>
+                    <option value="Human Anatomy & Physiology"></option>
+                    <option value="Descriptive Astronomy"></option>
+                    <option value="Genetics"></option>
+                    <option value="World History"></option>
+                    <option value="World History Honors"></option>
+                    <option value="American Studies I"></option>
+                    <option value="American Studies I Honors"></option>
+                    <option value="American Studies II"></option>
+                    <option value="American Studies II Honors"></option>
+                    <option value="AP US History"></option>
+                    <option value="AP European History"></option>
+                    <option value="AP American Government"></option>
+                    <option value="International Business and Cultures"></option>
+                    <option value="Legal and Political Experiences"></option>
+                    <option value="AP Comparative Government and Global Studies"></option>
+                    <option value="Economics/Social Problems in American Society"></option>
+                    <option value="Multicultural Studies"></option>
+                    <option value="AP Microeconomics"></option>
+                    <option value="AP Psychology"></option>
+                    <option value="Human Behavior"></option>
+                    <option value="An Intro to Spanish Communication & Culture"></option>
+                    <option value="Spanish Language & Cultural Study"></option>
+                    <option value="Spanish 1"></option>
+                    <option value="Spanish 2"></option>
+                    <option value="Spanish 3"></option>
+                    <option value="Spanish 3 Honors"></option>
+                    <option value="Spanish 4 "></option>
+                    <option value="Spanish 4 Honors"></option>
+                    <option value="Spanish 5"></option>
+                    <option value="Conversations in Spanish"></option>
+                    <option value="Honors Spanish Cultural Studies"></option>
+                    <option value="AP Spanish Language"></option>
+                    <option value="AP Spanish Literature"></option>
+                    <option value="French 1"></option>
+                    <option value="French 2"></option>
+                    <option value="French 3"></option>
+                    <option value="French 3 Honors"></option>
+                    <option value="French 4"></option>
+                    <option value="French 4 Honors"></option>
+                    <option value="French 5"></option>
+                    <option value="AP French Language"></option>
+                    <option value="German 1"></option>
+                    <option value="German 2"></option>
+                    <option value="German 3"></option>
+                    <option value="German 4"></option>
+                    <option value="German 5 Honors"></option>
+                    <option value="AP German Language"></option>
+                    <option value="Chinese 1"></option>
+                    <option value="Chinese 2"></option>
+                    <option value="Chinese 3"></option>
+                    <option value="Chinese 4"></option>
+                    <option value="Chinese 5 Honors"></option>
+                    <option value="AP Chinese Language"></option>
+                    <option value="Art Foundation"></option>
+                    <option value="Drawing & Painting I"></option>
+                    <option value="Drawing & Painting II"></option>
+                    <option value="Sculpture & Ceramics"></option>
+                    <option value="Printmaking"></option>
+                    <option value="Computer Art & Design"></option>
+                    <option value="Computer Art & Design II"></option>
+                    <option value="Photography"></option>
+                    <option value="AP Studio Art"></option>
+                    <option value="AP Art History"></option>
+                    <option value="Accounting"></option>
+                    <option value="Marketing"></option>
+                    <option value="Digital Communication"></option>
+                    <option value="Financial Literacy"></option>
+                    <option value="Digital Media"></option>
+                    <option value="Introduction to Computer Programming"></option>
+                    <option value="AP Computer Science A"></option>
+                    <option value="AP Computer Science Principles"></option>
+                    <option value="Advanced Topics in Computer Science Honors"></option>
+                    <option value="Principles of Engineering"></option>
+                    <option value="Graphic Engineering"></option>
+                    <option value="Engineering Design and Fabrication"></option>
+                    <option value="Robotics Engineering"></option>
+                    <option value="Creative Design"></option>
+                    <option value="Advanced Creative Design"></option>
+                    <option value="Culinary Arts"></option>
+                    <option value="International Foods"></option>
+                    <option value="Creative Cooking and Catering"></option>
+                    <option value="Child Growth and Development"></option>
+                    <option value="Youth Teaching Youth"></option>
+                    <option value="Music Theory I"></option>
+                    <option value="Music Theory II"></option>
+                    <option value="Music Technology"></option>
+                    <option value="Chorale"></option>
+                    <option value="Concert Choir"></option>
+                    <option value="Chamber Choir"></option>
+                    <option value="Concert Band"></option>
+                    <option value="Symphonic Band"></option>
+                    <option value="Wind Ensemble"></option>
+                    <option value="String Ensemble"></option>
+                    <option value="Symphony Orchestra"></option>
+                    <option value="Philharmonic Orchestra"></option>
+                    <option value="Broadcast Writing"></option>
+                    <option value="Advanced Broadcast Writing"></option>
+                    <option value="TV Production"></option>
+                    <option value="Journalism"></option>
+                    <option value="Advanced Journalism Honors"></option>
+                    <option value="Fundamentals of Sports Medicine"></option>
+                    <option value="Theatre Arts"></option>
+                    <option value="Princeton Unversity Courses"></option>
+                    <option value="Student Research"></option>
+                </datalist>
+                <br>
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col"> <input type="submit" value="Save" class = pastcoursesubmitbutton></div>
+                    <div class="col-4"></div>
+        
+                </div>
+            </form>
+       <% } else{%>
+        <h3 style="text-align: center; font-family:'Questrial', sans-serif;">Current Courses:</h3>
+        <div class="urclasses">
+            <p><%= user.class13 %></p>
+            <hr>
+            <p><%= user.class14 %></p>
+            <hr>
+            <p><%= user.class15 %></p>
+            <hr>
+            <p><%= user.class16 %></p>
+            <hr>
+            <p><%= user.class17%></p>
+            <hr>
+            <p><%= user.class18 %></p>
+            <hr>
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col"> <a href="/editcurrentcourse"><button type="button" class="btn btn-primary">Edit Courses</button></a></div>
+                <div class="col-4"></div>
+    
+            </div>
+        </div>
+       <% } %>
+ <% } else if(user.grade == 8){ %>
+        <p> You're not taking any high school classes yet! Click here to build your schedule!</p>
+       
+ <% }%>
+ 
+    
+
+
+  
+    </div>
+</body>
