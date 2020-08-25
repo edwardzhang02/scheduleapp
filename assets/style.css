@@ -6,7 +6,7 @@
 
 .home {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  background-color: #184d1b;
+  background-color: #556159;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -22,6 +22,12 @@
   display: inline;
   font-family: "Quicksand", sans-serif;
   font-size: 70px;
+}
+.bg-dark{
+  background:transparent !important;
+}
+.bg-dark.scrolled{
+  background:gray !important;
 }
 .title {
   color: white;
