@@ -15,9 +15,14 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
 <head>
 <body>
     <%- include('signedinnav'); -%>
+    <br>
+    <br>
+    <br>
     <br>
     <br>
 
@@ -25,16 +30,16 @@
 <br>
 
 <% if(user.grade == 8){ %>
-    <form action="/finalschedule" method="POST" class="pastcoursesform">
+    <form action="/8thfinalschedule" method="POST" class="pastcoursesform">
         <div class="row">
 
-            <div class="col-4 finalcolumns">
+            <div class="col-md-4 finalcolumns">
                 <h3 style="text-align: center; font-family: 'Questrial', sans-serif;"> Freshman Courses:</h3>
                 <label for="class1" class="pastcourselabel">Freshman Year Class 1</label>
                 <input type="text" name = 'class1' id='class1' list="datalist1" value='<%= user.class1 %>'>
     
                 <label for="class2" class="pastcourselabel">Freshman Year Class 2:</label>
-                <input type="text" name = 'class2' id = 'class2' list="datalist1" value="<%= user.class2 %>">
+                <input type="text" name = 'cldass2' id = 'class2' list="datalist1" value="<%= user.class2 %>">
     
                   
                 <label for="class3" class="pastcourselabel">Freshman Year Class 3:</label>
@@ -200,7 +205,7 @@
                         <br>
     
             </div>
-            <div class="col-2">
+            <div class="col-md-2">
                 <div  id="demo"class="gradrequirements " style="text-align: center; font-family: 'Questrial', sans-serif">
                     <h3 style="text-align: center; font-family: 'Questrial', sans-serif">Graduation Requirements:</h3>
                     <p>- 4 Language Arts Courses</p>
@@ -213,7 +218,7 @@
                     <p>- 1 Financial Literacy Course</p>
                 </div>
             </div>
-            <div class="col-4 finalcolumns">
+            <div class="col-md-4 finalcolumns">
                 <h3 style="text-align: center; font-family: 'Questrial', sans-serif;"> Sophomore Courses:</h3>
                 <label for="class7" class="pastcourselabel">Class 1:</label>
                 <input type="text" name = 'class7' id='class7' list="datalist1" value="<%= user.class7 %>">
@@ -383,7 +388,7 @@
         </div>
     
         <div class="row">
-            <div class="col-4 finalcolumns">
+            <div class="col-md-4 finalcolumns">
                 <h3 style="text-align: center; font-family: 'Questrial', sans-serif;"> Junior Courses:</h3>
                 <label for="class7" class="pastcourselabel">Class 1:</label>
                 <input type="text" name = 'class7' id='class7' list="datalist1" value="<%= user.class13 %>">
@@ -550,9 +555,9 @@
                 </datalist>
                 <br>
             </div>
-            <div class="col-3 finalcolumns">
+            <div class="col-md-3 finalcolumns">
                 <h3 style="text-align: center; font-family: 'Questrial', sans-serif;"> Option II:</h3>
-                <div style="text-align: center;">
+                <div style="text-align: center; ">
                     <a href="optionii" style="text-align: center; font-family: 'Questrial', sans-serif; ">What is Option II?</a>
                 </div>
                 <br>
@@ -568,7 +573,7 @@
                 <label for="optionII4" class="pastcourselabel">11th-12th Grade:</label>
                 <input type="text" name = 'optionII4' id="optionII4" list="datalist1" value = "<%= user.optionII4 %>">
             </div>
-            <div class="col-4 finalcolumns">
+            <div class="col-md-4 finalcolumns">
                 <h3 style="text-align: center; font-family: 'Questrial', sans-serif;"> Senior Courses:</h3>
                 <label for="class19" class="pastcourselabel">Class 1:</label>
                 <input type="text" name = 'class19' id='class19' list="datalist1" value="<%= user.class19 %>">
@@ -748,10 +753,10 @@
         </div>
     </form>
 <% } else if(user.grade == 9){ %>
-    <form action="/finalschedule" method="POST" class="pastcoursesform">
+    <form action="/9thfinalschedule" method="POST" class="pastcoursesform">
         <div class="row">
 
-            <div class="col-4 finalcolumns">
+            <div class="col-md-4 finalcolumns">
                 <h3 style="text-align: center; font-family: 'Questrial', sans-serif;"> Freshman Courses:</h3>
                 <div class="urclasses">
                     <p><%= user.class1 %></p>
@@ -776,7 +781,7 @@
                         <br>
     
             </div>
-            <div class="col-2">
+            <div class="col-md-2">
                 <div  id="demo"class=" gradrequirements " style="text-align: center; font-family: 'Questrial', sans-serif">
                     <h3 style="text-align: center; font-family: 'Questrial', sans-serif">Graduation Requirements:</h3>
                     <p>4 Language Arts Courses</p>
@@ -789,7 +794,7 @@
                     <p>1 Financial Literacy Course</p>
             </div>
             </div>
-            <div class="col-4 finalcolumns">
+            <div class="col-md-4 finalcolumns">
                 <h3 style="text-align: center; font-family: 'Questrial', sans-serif;"> Sophomore Courses:</h3>
                 <label for="class7" class="pastcourselabel">Class 1:</label>
                 <input type="text" name = 'class7' id='class7' list="datalist1" value="<%= user.class7 %>">
@@ -960,7 +965,7 @@
         </div>
     
         <div class="row">
-            <div class="col-4 finalcolumns">
+            <div class="col-md-4 finalcolumns">
                 <h3 style="text-align: center; font-family: 'Questrial', sans-serif;"> Junior Courses:</h3>
                 <label for="class7" class="pastcourselabel">Class 1:</label>
                 <input type="text" name = 'class7' id='class7' list="datalist1" value="<%= user.class13 %>">
@@ -1127,7 +1132,7 @@
                 </datalist>
                 <br>
             </div>
-            <div class="col-3 finalcolumns">
+            <div class="col-md-3 finalcolumns">
                 <h3 style="text-align: center; font-family: 'Questrial', sans-serif;"> Option II:</h3>
                 <div style="text-align: center;">
                     <a href="optionii" style="text-align: center; font-family: 'Questrial', sans-serif; ">What is Option II?</a>
@@ -1145,7 +1150,7 @@
                 <label for="optionII4" class="pastcourselabel">11th-12th Grade:</label>
                 <input type="text" name = 'optionII4' id="optionII4" list="datalist1" value = "<%= user.optionII4 %>">
             </div>
-            <div class="col-4 finalcolumns">
+            <div class="col-md-4 finalcolumns">
                 <h3 style="text-align: center; font-family: 'Questrial', sans-serif;"> Senior Courses:</h3>
                 <label for="class19" class="pastcourselabel">Class 1:</label>
                 <input type="text" name = 'class19' id='class19' list="datalist1" value="<%= user.class19 %>">
@@ -1324,10 +1329,10 @@
         </div>
     </form>
 <% } else if(user.grade ==10) { %>
-    <form action="/finalschedule" method="POST" class="pastcoursesform">
+    <form action="/10thfinalschedule" method="POST" class="pastcoursesform">
         <div class="row">
 
-            <div class="col-4 finalcolumns">
+            <div class="col-md-4 finalcolumns">
                 <h3 style="text-align: center; font-family: 'Questrial', sans-serif;"> Freshman Courses:</h3>
                 <br>
                 <div class="urclasses">
@@ -1347,7 +1352,7 @@
                         
     
             </div>
-            <div class="col-2">
+            <div class="col-md-2">
                 <div  id="demo"class=" gradrequirements " style="text-align: center; font-family: 'Questrial', sans-serif">
                     <h3 style="text-align: center; font-family: 'Questrial', sans-serif">Graduation Requirements:</h3>
                     <p>4 Language Arts Courses</p>
@@ -1360,7 +1365,7 @@
                     <p>1 Financial Literacy Course</p>
             </div>
             </div>
-            <div class="col-4 finalcolumns">
+            <div class="col-md-4 finalcolumns">
                 <h3 style="text-align: center; font-family: 'Questrial', sans-serif;"> Sophomore Courses:</h3>
                 <br>
                 <div class="urclasses">
@@ -1746,9 +1751,9 @@
         </div>
     </form>
 <% } else if(user.grade ==11) { %>
-    <form action="/finalschedule" method="POST" class="pastcoursesform">
+    <form action="/11thfinalschedule" method="POST" class="pastcoursesform">
         <div class="row">
-            <div class="col-4 finalcolumns">
+            <div class="col-md-4 finalcolumns">
                 <h3 style="text-align: center; font-family: 'Questrial', sans-serif;"> Freshman Courses:</h3>
                 <br>
                 <div class="urclasses">
@@ -1768,7 +1773,7 @@
                         
     
             </div>
-            <div class="col-2">
+            <div class="col-md-2">
                 <div  id="demo"class=" gradrequirements " style="text-align: center; font-family: 'Questrial', sans-serif">
                     <h3 style="text-align: center; font-family: 'Questrial', sans-serif">Graduation Requirements:</h3>
                     <p>4 Language Arts Courses</p>
@@ -1781,7 +1786,7 @@
                     <p>1 Financial Literacy Course</p>
             </div>
             </div>
-            <div class="col-4 finalcolumns">
+            <div class="col-md-4 finalcolumns">
                 <h3 style="text-align: center; font-family: 'Questrial', sans-serif;"> Sophomore Courses:</h3>
                 <br>
                 <div class="urclasses">
@@ -1803,7 +1808,7 @@
         </div>
     
         <div class="row">
-            <div class="col-4 finalcolumns">
+            <div class="col-md-4 finalcolumns">
                 <h3 style="text-align: center; font-family: 'Questrial', sans-serif;"> Junior Courses:</h3>
                 <br>
                 <div class="urclasses">
@@ -1822,12 +1827,14 @@
                 </div>
                 <br>
             </div>
-            <div class="col-3 finalcolumns">
+            <div class="col-md-3 finalcolumns">
                 <h3 style="text-align: center; font-family: 'Questrial', sans-serif;"> Option II:</h3>
                 <div style="text-align: center;">
                     <a href="optionii" style="text-align: center; font-family: 'Questrial', sans-serif; ">What is Option II?</a>
                 </div>
                 <br>
+                <label for="eighthgradecourse" class="pastcourselabel">High School Course Taken in 8th Grade:</label>
+                <input type="text" name = 'eighthgradecourse' id="eighthgradecourse" list="datalist1" value = "<%= user.eighthgradecourse %>">
                 <label for="optionII1" class="pastcourselabel">8th-9th Grade:</label>
                 <input type="text" name = 'optionII1' id="optionII1" list="datalist1" value = "<%= user.optionII1 %>">
                 <br>
@@ -1840,7 +1847,7 @@
                 <label for="optionII4" class="pastcourselabel">11th-12th Grade:</label>
                 <input type="text" name = 'optionII4' id="optionII4" list="datalist1" value = "<%= user.optionII4 %>">
             </div>
-            <div class="col-4 finalcolumns">
+            <div class="col-md-4 finalcolumns">
                 <h3 style="text-align: center; font-family: 'Questrial', sans-serif;"> Senior Courses:</h3>
                 <label for="class19" class="pastcourselabel">Class 1:</label>
                 <input type="text" name = 'class19' id='class19' list="datalist1" value="<%= user.class19 %>">
@@ -2045,41 +2052,44 @@
         <h3 style="text-align: center; font-family: 'Questrial', sans-serif;"> Alerts</h3>
         <!-- Graduation Requirements -->
         <div class="graduationrequirements" style="font-family: 'Questrial', sans-serif;">
-            <h5>Graduation Requirements:</h3>
-            <% if(checklanguagearts == false){%>
-                <p id=output class = gradreqalert> You only have <%= languageartscount %> language arts course(s) in your schedule!</p>
-           <%  } %>
-    
-           <% if(checkmath == false){%>
-            <p id=output class = gradreqalert> You only have <%= mathcount %> math course(s) in your schedule!</p>
-       <%  } %>
-    
-            <% if(checkscience == false){%>
-                <p id=output class = gradreqalert> You only have <%= sciencecount %> science course(s) in your schedule!</p>
-           <%  } %>
-    
-           <% if(checkhistory == false){%>
-            <p id=output class = gradreqalert> You only have <%= historycount %> history course(s) in your schedule!</p>
-       <%  } %>
-    
-       <% if(checkworldlanguage == false){%>
-        <p id=output class = gradreqalert> You only have <%= worldlanguagecount %> world language course in your schedule!</p>
-    <%  } %>
-    
-    <% if(checkart == false){%>
-        <p id=output class = gradreqalert> You do not have any visual & performing arts courses in your schedule!</p>
-    <%  } %>
-    
-    <% if(checkcentury == false){%>
-        <p id=output class = gradreqalert> You do not have any 21st century life & careers courses in your schedule!</p>
-    <%  } %>
-    
-    <% if(checkfinancial == false){%>
-        <p id=output class = gradreqalert> You do not have any financial literacy courses in your schedule!</p>
-    <%  } %>
-        </div>
+            <h5 >Graduation Requirements:</h3>
 
+                    <% if(checklanguagearts == false){%>
+                        <p id=output class = gradreqalert> You only have <%= languageartscount %> language arts course(s) in your schedule!</p>
+               <%  } %>
+        
+               <% if(checkmath == false){%>
+                <p id=output class = gradreqalert> You only have <%= mathcount %> math course(s) in your schedule!</p>
+           <%  } %>
+        
+                <% if(checkscience == false){%>
+                    <p id=output class = gradreqalert> You only have <%= sciencecount %> science course(s) in your schedule!</p>
+               <%  } %>
+        
+               <% if(checkhistory == false){%>
+                <p id=output class = gradreqalert> You only have <%= historycount %> history course(s) in your schedule!</p>
+           <%  } %>
+        
+           <% if(checkworldlanguage == false){%>
+            <p id=output class = gradreqalert> You only have <%= worldlanguagecount %> world language course in your schedule!</p>
+        <%  } %>
+        
+        <% if(checkart == false){%>
+            <p id=output class = gradreqalert> You do not have any visual & performing arts courses in your schedule!</p>
+        <%  } %>
+        
+        <% if(checkcentury == false){%>
+            <p id=output class = gradreqalert> You do not have any 21st century life & careers courses in your schedule!</p>
+        <%  } %>
+        
+        <% if(checkfinancial == false){%>
+            <p id=output class = gradreqalert> You do not have any financial literacy courses in your schedule!</p>
+        <%  } %>
 
+    
+    
+            </div>
+ 
 
 <!-- Prerequisites -->
 

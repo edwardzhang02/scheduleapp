@@ -18,18 +18,37 @@
 <body>
     <%- include('signedinnav'); -%>
     <br>
-    <div class="dirtitle">
-        <h1 style=" font-size: 50px; font-family: 'Quicksand', sans-serif; ">Course Directory</h1>
+    <br>
+    <br>
+    <br>
+
+    <div class="row">
+      <div class="col-4" style="text-align:center;">
+        <a href="/home">
+          <button type="button" class="signupbutton " style="width:200px; margin-top:10px;">Dashboard</button>
+      </a>
+      </div>
+      <div class="col-4">
+        <div class="dirtitle">
+          <h1 style=" font-size: 50px; font-family: 'Quicksand', sans-serif; ">Course Directory</h1>
+      </div>
+      </div>
+      <div class="col-4" style="text-align:center;">
+        <a href="/finalschedule" >
+          <button type="button" class="signupbutton " style="width:200px; margin-top:10px;">4-Year Schedule</button>
+      </a>
+      </div>
     </div>
+
     
     <div style="text-align: center;">
-        <a href="#ladirectory">ELA  &nbsp </a>
-        <a href="#mathdirectory">Math  &nbsp </a>
-        <a href="#sciencedirectory">Science &nbsp  </a>
-        <a href="#historydirectory">Social Studies  &nbsp </a>
-        <a href="#languagedirectory">World Language &nbsp  </a>
-        <a href="#electivedirectory">Elective/Misc &nbsp</a>
-        <a href="#specialdirectory">Special Courses</a>
+        <a href="#ladirectory" style="color: #ac8c54;">ELA  &nbsp </a>
+        <a href="#mathdirectory" style="color: #ac8c54;">Math  &nbsp </a>
+        <a href="#sciencedirectory" style="color: #ac8c54;">Science &nbsp  </a>
+        <a href="#historydirectory" style="color: #ac8c54;">Social Studies  &nbsp </a>
+        <a href="#languagedirectory" style="color: #ac8c54;">World Language &nbsp  </a>
+        <a href="#electivedirectory" style="color: #ac8c54;">Elective/Misc &nbsp</a>
+        <a href="#specialdirectory" style="color: #ac8c54;">Special Courses</a>
 
     </div>
     <hr>
@@ -1435,4 +1454,8 @@
               </div>
         </div>
     </section>
+    <br>
+    <br>
+
+    <%- include('signedinfooter'); -%>
 </body>

@@ -14,6 +14,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+
 <script>
     $(function () {
   $(document).scroll(function () {
@@ -28,6 +31,7 @@
 
      <!-- Home Page -->
 <section class= home >
+    <div class="bgimg"></div>
     <div class="header">
         <br>
         <br>
@@ -41,10 +45,18 @@
         <br>
         <br>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-8" style="text-align: center;">
+                <h1  style="color:white; font-size:80px; text-align: center;">Welcome to CourseAlert</h1>
+                <h2 style="color:white; text-align:center; font-size: 25px; ">Explore Highschool. Create a Roadmap. Plan your Future.</h2>
+                <br>
+                <a href="/signup">
+                    <button class=" default btn-lg getstartedbtn">Get Started </button>
+                </a>
+            </div>
+            <div class="col"></div>
+        </div>
         <br>
         <br>
         <br>
@@ -58,48 +70,78 @@
         <br>
         <br>
 
-            <h1 class="title">CourseAlert</h1>
-    </div>
-</section>
-<!-- About Page -->
-<section class= about>
-    <div class="container-fluid-sm about-container">
-        
-            <br>
-            <br>
-            <br>
-            <div class="about-title" id = "about-title"><p>Take control of high school.</p></div>
-            <br>
-            <br>
-            <div class="row">
-                <div class="col-2"></div>
-                <div class="col-8 about-paragraph"><p>High school is a confusing place - clubs, classes, sports, and a new school are thrown at you all at once! Scheduling courses
-                    amidst the commotion can be daunting, especially without a plan. Our goal is to help students take control of their high school roadmap,
-                    guiding you along the course-selection pathway towards a bright future. 
-                </p>
-            </div>
-                <div class="col-2"></div>
-            </div>
-            <br>
-            <br>
-            <a href="/signup">
-                <button type="button" class="btn btn-success learnmorebtn btn-lg">
-                    <p class = "getstartedbutton">Get Started!</p>  
-                </button>
-            </a>
+
 
             <br>
             <br>
             <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            
-            
-        
+
     </div>
-    
 </section>
+
+<!-- about us -->
+<section style="background-color: #ac8c54;" id="aboutus">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h2 style="font-family: 'Questrial', sans-serif; color: white; text-align: center; font-size:45px; ">About Us</h2>
+<br>
+<br>
+<br>
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col"><p style="text-align: center; font-family: 'Quicksand', sans-serif; color: white; line-height: 2; font-size: 17px;">As a high schooler, there was always a point in the year where I had to think about the courses I planned to take for the next year.
+
+        At this point, every year, I always scrambled to figure out what would be the best course of action - what could get me the highest GPA? What would colleges be looking for? And most importantly,
+        
+        what is a courseload that fits the requirements, that I am able to attain good grades in? As these questions ran through my head, I realized that all my peers around me had the same exact problem. CourseAlert is the solution. Our goal
+    is to make sure that WWP students know what they are going into during high school, and have a clear plan for college & beyond, which is reflected in their course selection. </p>
+        </div>
+    <div class="col-2"></div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</section>
+<!-- faq -->
+<section style="background-color: white;" id="faq">
+<br>
+<br>
+<br>
+<br>
+<h2 style="font-family: 'Questrial', sans-serif; color: black; text-align: center; font-size:45px; ">Common Questions</h2>
+<br>
+<p style="font-family: 'Quicksand', sans-serif; color:black; text-align:center; font-size:20px;">Got Questions? We're here to help!</p>
+<br>
+<br>
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col">
+        <p style="font-family: 'Quicksand', sans-serif; color:black; font-size:20px; font-weight:bold">Who is this meant for?</p>
+        <br>
+        <p style="font-family: 'Quicksand', sans-serif; color:black; font-size:15px;">This app is meant for incoming freshmen, high school students, or parents who want to better understand
+        the courses available to them, as well as the steps required to meet the graduation requirements.</p>
+        <br>
+        <br>
+        <br>
+        <p style="font-family: 'Quicksand', sans-serif; color:black; font-size:20px; font-weight:bold">What does CourseAlert actually do?</p>
+        <br>
+        <p style="font-family: 'Quicksand', sans-serif; color:black; font-size:15px;">We provide you with a detailed description of all the courses that are available to you; after selecting the courses that you wish to choose,
+         we'll give you a rundown of: any prerequisites that you have missed - any graduation requirements that you have missed - your maximum weighted GPA given the courses you have chosen.</p>
+         <br>
+         <br>
+         <br>
+    </div>
+    <div class="col-3"></div>
+</div>
+</section>
+<%- include('footer'); -%>
+
 </body>
 </html>

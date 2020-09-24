@@ -20,6 +20,10 @@
     <%- include('signedinnav'); -%>
     <br>
     <br>
+    <br>
+    <br>
+    <br>
+    
     <h1 style="text-align: center; font-family: 'Questrial', sans-serif;">Current Courses</h1>
     <div class="grade10form">
             
@@ -214,7 +218,7 @@
             <hr>
             <div class="row">
                 <div class="col-4"></div>
-                <div class="col"> <a href="/editcurrentcourse"><button type="button" class="btn btn-primary">Edit Courses</button></a></div>
+                <div class="col"> <a href="/editcurrentcourse"><button type="button" class="pastcoursesubmitbutton">Edit Courses</button></a></div>
                 <div class="col-4"></div>
     
             </div>
@@ -413,7 +417,7 @@
             <hr>
             <div class="row">
                 <div class="col-4"></div>
-                <div class="col"> <a href="/editcurrentcourse"><button type="button" class="btn btn-primary">Edit Courses</button></a></div>
+                <div class="col"> <a href="/editcurrentcourse"><button type="button" class="pastcoursesubmitbutton">Edit Courses</button></a></div>
                 <div class="col-4"></div>
     
             </div>
@@ -423,23 +427,23 @@
   <% } else if(user.grade == 11){ %>
         <% if(user.class13 == null){%>
             <form action="/11thgradecurrentcourse" method="POST" class="pastcoursesform">
-                <label for="class7" class="pastcourselabel">Class 1:</label>
-                <input type="text" name = 'class7' id='class7' list="datalist1" value="">
+                <label for="class13" class="pastcourselabel">Class 1:</label>
+                <input type="text" name = 'class13' id='class13' list="datalist1" value="">
      
-                <label for="class8" class="pastcourselabel">Class 2:</label>
-                <input type="text" name = 'class8' id = 'class8' list="datalist1" value="">
+                <label for="class14" class="pastcourselabel">Class 2:</label>
+                <input type="text" name = 'class14' id = 'class14' list="datalist1" value="">
      
-                <label for="class9" class="pastcourselabel">Class 3:</label>
-                <input type="text" name = 'class9' id = 'class9' list="datalist1" value="">
+                <label for="class15" class="pastcourselabel">Class 3:</label>
+                <input type="text" name = 'class15' id = 'class15' list="datalist1" value="">
      
-                <label for="class10" class="pastcourselabel">Class 4:</label>
-                <input type="text" name = 'class10' id='class10' list="datalist1" value="">
+                <label for="class16" class="pastcourselabel">Class 4:</label>
+                <input type="text" name = 'class16' id='class16' list="datalist1" value="">
      
-                <label for="class11" class="pastcourselabel">Class 5:</label>
-                <input type="text" name='class11' id='class11' list="datalist1" value="">
+                <label for="class17" class="pastcourselabel">Class 5:</label>
+                <input type="text" name='class17' id='class17' list="datalist1" value="">
      
-                <label for="class12" class="pastcourselabel">Class 6:</label>
-                <input type="text" name='class12' id='class12' list="datalist1" value="">
+                <label for="class18" class="pastcourselabel">Class 6:</label>
+                <input type="text" name='class18' id='class18' list="datalist1" value="">
      
                 <datalist id="datalist1">
                     <option value="Language Arts I"></option>
@@ -611,7 +615,7 @@
             <hr>
             <div class="row">
                 <div class="col-4"></div>
-                <div class="col"> <a href="/editcurrentcourse"><button type="button" class="btn btn-primary">Edit Courses</button></a></div>
+                <div class="col"> <a href="/editcurrentcourse"><button type="button" class="pastcoursesubmitbutton">Edit Courses</button></a></div>
                 <div class="col-4"></div>
     
             </div>

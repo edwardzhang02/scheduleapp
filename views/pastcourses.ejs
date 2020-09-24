@@ -20,7 +20,9 @@
     <%- include('signedinnav'); -%>
     <br>
     <br>
-
+    <br>
+    <br>
+    <br>
     <h1 style="text-align: center; font-family: 'Questrial', sans-serif;">Previous Courses</h1>
     <div class="grade10form">
         <% if(user.grade == 8 || user.grade == 9){%>
@@ -292,6 +294,7 @@
                         <option value="D">D</option>
                         <option value="F">F</option>
                       </select>
+                      <br>
                     <label for="class2" class="pastcourselabel">Freshman Year Class 2:</label>
                     <input type="text" name = 'class2' id = 'class2' list="datalist1" value="">
                     <label for="grade">Grade:</label>
@@ -303,6 +306,7 @@
                         <option value="D">D</option>
                         <option value="F">F</option>
                       </select>
+                      <br>
                     <label for="class3" class="pastcourselabel">Freshman Year Class 3:</label>
                     <input type="text" name = 'class3' id = 'class3' list="datalist1" value="">
                     <label for="grade">Grade:</label>
@@ -314,6 +318,7 @@
                         <option value="D">D</option>
                         <option value="F">F</option>
                       </select>
+                      <br>
                     <label for="class4" class="pastcourselabel">Freshman Year Class 4:</label>
                     <input type="text" name = 'class4' id='class4' list="datalist1" value="">
                     <label for="grade">Grade:</label>
@@ -325,6 +330,7 @@
                         <option value="D">D</option>
                         <option value="F">F</option>
                       </select>
+                      <br>
                     <label for="class5" class="pastcourselabel">Freshman Year Class 5:</label>
                     <input type="text" name='class5' id='class5' list="datalist1" value="">
                     <label for="grade">Grade:</label>
@@ -336,17 +342,20 @@
                         <option value="D">D</option>
                         <option value="F">F</option>
                       </select>
+                      <br>
                     <label for="class6" class="pastcourselabel">Freshman Year Class 6:</label>
                     <input type="text" name='class6' id='class6' list="datalist1" value="">
                     <label for="grade">Grade:</label>
                     <select id="grade6" name="grade6" required>
+                      <option value="">Select a letter grade</option>
                         <option value="A">A</option>
                         <option value="B">B</option>
                         <option value="C">C</option>
                         <option value="D">D</option>
                         <option value="F">F</option>
                       </select>
-                    <label for="class7" class="pastcourselabel">Freshman Year Class 7:</label>
+                      <br>
+                    <label for="class7" class="pastcourselabel">Sophomore Year Class 1:</label>
                     <input type="text" name='class7' id='class7' list="datalist1" value="">
                     <label for="grade">Grade:</label>
                     <select id="grade7" name="grade7" required>
@@ -357,7 +366,8 @@
                         <option value="D">D</option>
                         <option value="F">F</option>
                       </select>
-                    <label for="class8" class="pastcourselabel">Freshman Year Class 8:</label>
+                      <br>
+                    <label for="class8" class="pastcourselabel">Sophomore Year Class 2:</label>
                     <input type="text" name='class8' id='class8' list="datalist1" value="">
                     <label for="grade">Grade:</label>
                     <select id="grade8" name="grade8" required>
@@ -368,7 +378,8 @@
                         <option value="D">D</option>
                         <option value="F">F</option>
                       </select>
-                    <label for="class9" class="pastcourselabel">Freshman Year Class 9:</label>
+                      <br>
+                    <label for="class9" class="pastcourselabel">Sophomore Year Class 3:</label>
                     <input type="text" name='class9' id='class9' list="datalist1" value="">
                     <label for="grade">Grade:</label>
                     <select id="grade9" name="grade9" required>
@@ -379,7 +390,8 @@
                         <option value="D">D</option>
                         <option value="F">F</option>
                       </select>
-                    <label for="class10" class="pastcourselabel">Freshman Year Class 10:</label>
+                      <br>
+                    <label for="class10" class="pastcourselabel">Sophomore Year Class 4:</label>
                     <input type="text" name='class10' id='class10' list="datalist1" value="">
                     <label for="grade">Grade:</label>
                     <select id="grade10" name="grade10" required>
@@ -390,7 +402,8 @@
                         <option value="D">D</option>
                         <option value="F">F</option>
                       </select>
-                    <label for="class11" class="pastcourselabel">Freshman Year Class 11:</label>
+                      <br>
+                    <label for="class11" class="pastcourselabel">Sophomore Year Class 5:</label>
                     <input type="text" name='class11' id='class11' list="datalist1" value="">
                     <label for="grade">Grade:</label>
                     <select id="grade11" name="grade11" required>
@@ -401,7 +414,8 @@
                         <option value="D">D</option>
                         <option value="F">F</option>
                       </select>
-                    <label for="class12 class="pastcourselabel">Freshman Year Class 12:</label>
+                      <br>
+                    <label form="class12" class="pastcourselabel">Sophomore Year Class 6:</label>
                     <input type="text" name='class12' id='class12' list="datalist1" value="">
                     <label for="grade">Grade:</label>
                     <select id="grade12" name="grade12" required>
@@ -600,7 +614,7 @@
                 <hr>
                 <div class="row">
                     <div class="col-4"></div>
-                    <div class="col"> <a href="/editcourse"><button type="button" class="btn btn-primary">Edit Courses</button></a></div>
+                    <div class="col"> <a href="/editcourse"><button type="button" class="pastcoursesubmitbutton">Edit Courses</button></a></div>
                     <div class="col-4"></div>
         
                 </div>

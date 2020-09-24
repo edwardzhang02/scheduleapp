@@ -6,10 +6,18 @@ const {ensureAuthenticated} = require('../config/auth');
 //user model
 const user = require('../models/User');
 const User = require('../models/User');
-
+var bodyParser = require('body-parser')
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
 //routes
 router.get('/', function(req, res){
-    res.render('index');
+    if(req.isAuthenticated){
+        res.render('index');
+    }
+    else{
+        res.render('home')
+    }
+
+
 });
 
 router.get('/signup', function(req, res){
@@ -60,13 +68,24 @@ router.get('/optionii', ensureAuthenticated, (req,res) =>{
         user:req.user
     });
 });
+router.get('/gradecalc', ensureAuthenticated, (req,res) =>{
+    res.render('gradecalc', {
+        user:req.user,
+        requiredaverage: 0
+    });
+});
+router.get('/gpacalc', ensureAuthenticated, (req,res) =>{
+    res.render('gpacalc',{
+        user:req.user
+    } );
+});
 //finalschedule logic
 router.get('/finalschedule', ensureAuthenticated, (req,res) =>{
     //Language Arts Grad Requirement Check
     var checklanguagearts = false
     var languageartscourses = ['Language Arts I', 'Language Arts I Honors', 'Language Arts II', 'Language Arts II Honors', 'Language Arts III', 'Language Arts III Honors', 
     'Language Arts IV', 'Language Arts IV Honors', 'AP Language and Composition', 'AP Literature and Composition'];
-    var yourcourses = [req.user.class1, req.user.class2, req.user.class3, req.user.class4, req.user.class5, req.user.class6, req.user.class7, req.user.class8, req.user.class9, req.user.class10, req.user.class11, req.user.class12, 
+    var yourcourses = [req.user.eighthgradecourse, req.user.class1, req.user.class2, req.user.class3, req.user.class4, req.user.class5, req.user.class6, req.user.class7, req.user.class8, req.user.class9, req.user.class10, req.user.class11, req.user.class12, 
         req.user.class13, req.user.class14, req.user.class15, req.user.class16, req.user.class17, req.user.class18, req.user.class19, req.user.class20, req.user.class21, req.user.class22, req.user.class23, req.user.class24];
          
     var languageartscount = 0;
@@ -87,7 +106,7 @@ router.get('/finalschedule', ensureAuthenticated, (req,res) =>{
        var checkmath = false
     var mathcourses = ['Algebra I', 'Geometry', 'Geometry Honors', 'Geometry Honors & Accelerated', 'Algebra II', 'Advanced Algebra II', 'Advanced Algebra II Honors', 'Algebra & Trigonometry', 'Pre-Calculus',
                         'Pre-Calculus Honors', 'Pre-Calculus Honors & Accelerated', 'Calculus Honors', 'AP Calculus AB', 'AP Calculus BC', 'Multivariable Calculus Honors', 'Statistics', 'AP Statistics'];
-    var yourcourses = [req.user.class1, req.user.class2, req.user.class3, req.user.class4, req.user.class5, req.user.class6, req.user.class7, req.user.class8, req.user.class9, req.user.class10, req.user.class11, req.user.class12, 
+    var yourcourses = [req.user.eighthgradecourse, req.user.class1, req.user.class2, req.user.class3, req.user.class4, req.user.class5, req.user.class6, req.user.class7, req.user.class8, req.user.class9, req.user.class10, req.user.class11, req.user.class12, 
         req.user.class13, req.user.class14, req.user.class15, req.user.class16, req.user.class17, req.user.class18, req.user.class19, req.user.class20, req.user.class21, req.user.class22, req.user.class23, req.user.class24];
          
     var mathcount = 0;
@@ -107,8 +126,8 @@ router.get('/finalschedule', ensureAuthenticated, (req,res) =>{
        var checkscience = false
     var sciencecourses = ['Biology', 'Biology Honors', 'AP Biology', 'Chemistry', 'Chemistry Honors', 'AP Chemistry', 'Physics', 'Physics Honors', 'AT Phyiscs', 'Environmental Science',
                             'AP Environmental Science', 'Forensic Sciences', 'Human Anatomy & Phisiology', 'Descriptive Astronomy', 'Genetics'];
-    var yourcourses = [req.user.class1, req.user.class2, req.user.class3, req.user.class4, req.user.class5, req.user.class6, req.user.class7, req.user.class8, req.user.class9, req.user.class10, req.user.class11, req.user.class12, 
-        req.user.class13, req.user.class14, req.user.class15, req.user.class16, req.user.class17, req.user.class18, req.user.class19, req.user.class20, req.user.class21, req.user.class22, req.user.class23, req.user.class24];
+    var yourcourses = [req.user.eighthgradecourse, req.user.optionII1, req.user.class1, req.user.class2, req.user.class3, req.user.class4, req.user.class5, req.user.class6, req.user.optionII2, req.user.class7, req.user.class8, req.user.class9, req.user.class10, req.user.class11, req.user.class12, req.user.optionII3,
+        req.user.class13, req.user.class14, req.user.class15, req.user.class16, req.user.class17, req.user.class18, req.user.optionII4, req.user.class19, req.user.class20, req.user.class21, req.user.class22, req.user.class23, req.user.class24];
          
     var sciencecount = 0;
     for(var i =0;  i<yourcourses.length; i++){
@@ -125,8 +144,8 @@ router.get('/finalschedule', ensureAuthenticated, (req,res) =>{
  
        var checkhistory = false
     var historycourses = ['World History', 'World History Honors', 'American Studies I', 'American Studies I Honors', 'American Studies II', 'American Studies II Honors', 'AP United States History'];
-    var yourcourses = [req.user.class1, req.user.class2, req.user.class3, req.user.class4, req.user.class5, req.user.class6, req.user.class7, req.user.class8, req.user.class9, req.user.class10, req.user.class11, req.user.class12, 
-        req.user.class13, req.user.class14, req.user.class15, req.user.class16, req.user.class17, req.user.class18, req.user.class19, req.user.class20, req.user.class21, req.user.class22, req.user.class23, req.user.class24];
+    var yourcourses = [req.user.eighthgradecourse, req.user.optionII1, req.user.class1, req.user.class2, req.user.class3, req.user.class4, req.user.class5, req.user.class6, req.user.optionII2, req.user.class7, req.user.class8, req.user.class9, req.user.class10, req.user.class11, req.user.class12, req.user.optionII3,
+        req.user.class13, req.user.class14, req.user.class15, req.user.class16, req.user.class17, req.user.class18, req.user.optionII4, req.user.class19, req.user.class20, req.user.class21, req.user.class22, req.user.class23, req.user.class24];
          
     var historycount = 0;
     for(var i =0;  i<yourcourses.length; i++){
@@ -147,8 +166,8 @@ router.get('/finalschedule', ensureAuthenticated, (req,res) =>{
     var worldlanguagecourses = ['An Intro to Spanish Communication & Culture', 'Spanish Language & Cultural Study', 'Spanish 1', 'Spanish 2', 'Spanish 3', 'Spanish 3 Honors', 'Spanish 4', 'Spanish 4 Honors', 'Spanish 5', 
     'Conversations in Spanish', 'Honors Spanish Cultural Studies', 'AP Spanish Language', 'AP Spanish Literature','French 1', 'French 2', 'French 3', 'French 3 Honors', 'French 4', 'French 4 Honors', 'French 5', 'AP French Language',
     'German 1', 'German 2', 'German 3', 'German 4', 'German 5 Honors', 'AP German Language', 'Chinese 1', 'Chinese 2', 'Chinese 3', 'Chinese 4', 'Chinese 5 Honors', 'AP Chinese Language'];
-    var yourcourses = [req.user.class1, req.user.class2, req.user.class3, req.user.class4, req.user.class5, req.user.class6, req.user.class7, req.user.class8, req.user.class9, req.user.class10, req.user.class11, req.user.class12, 
-        req.user.class13, req.user.class14, req.user.class15, req.user.class16, req.user.class17, req.user.class18, req.user.class19, req.user.class20, req.user.class21, req.user.class22, req.user.class23, req.user.class24];
+    var yourcourses = [req.user.eighthgradecourse, req.user.optionII1, req.user.class1, req.user.class2, req.user.class3, req.user.class4, req.user.class5, req.user.class6, req.user.optionII2, req.user.class7, req.user.class8, req.user.class9, req.user.class10, req.user.class11, req.user.class12, req.user.optionII3,
+        req.user.class13, req.user.class14, req.user.class15, req.user.class16, req.user.class17, req.user.class18, req.user.optionII4, req.user.class19, req.user.class20, req.user.class21, req.user.class22, req.user.class23, req.user.class24];
          
     var worldlanguagecount = 0;
     for(var i =0;  i<yourcourses.length; i++){
@@ -167,8 +186,8 @@ router.get('/finalschedule', ensureAuthenticated, (req,res) =>{
  
        var checkart = false
     var artcourses = ['Art Foundation', 'Drawing & Painting I', 'Drawing & Painting II', 'Sculpture & Ceramics', 'Printmaking', 'Computer Art & Design I', 'Computer Art & Design II', 'Photography', 'AP Studio Art', 'AP Art History', 'Music Theory I', 'Music Theory II', 'Music Technology', 'Chorale', 'Concert Choir','Chamber Choir', 'Concert Band', 'Symphonic Band', 'Wind Ensemble', 'String Ensemble', 'Symphony Orchestra', 'Philharmonic Orchestra','Theatre Arts'];
-    var yourcourses = [req.user.class1, req.user.class2, req.user.class3, req.user.class4, req.user.class5, req.user.class6, req.user.class7, req.user.class8, req.user.class9, req.user.class10, req.user.class11, req.user.class12, 
-        req.user.class13, req.user.class14, req.user.class15, req.user.class16, req.user.class17, req.user.class18, req.user.class19, req.user.class20, req.user.class21, req.user.class22, req.user.class23, req.user.class24];
+    var yourcourses = [req.user.eighthgradecourse, req.user.optionII1, req.user.class1, req.user.class2, req.user.class3, req.user.class4, req.user.class5, req.user.class6, req.user.optionII2, req.user.class7, req.user.class8, req.user.class9, req.user.class10, req.user.class11, req.user.class12, req.user.optionII3,
+        req.user.class13, req.user.class14, req.user.class15, req.user.class16, req.user.class17, req.user.class18, req.user.optionII4, req.user.class19, req.user.class20, req.user.class21, req.user.class22, req.user.class23, req.user.class24];
          
     var artcount = 0;
     for(var i =0;  i<yourcourses.length; i++){
@@ -187,8 +206,8 @@ router.get('/finalschedule', ensureAuthenticated, (req,res) =>{
        var checkcentury = false
     var centurycourses = ['Accounting', 'Marketing', 'Digital Communication', 'Digital Media', 'Introduction to Computer Programming', 'AP Computer Science A', 'AP Computer Science Principles', 'Advanced Topics in Computer Science Honors', 'Creative Design', 'Advanced Creative Design', 'Culinary Arts', 'International Foods', 'Creative Cooking & Catering', 'Child Growth & Development', 'Youth Teaching Youth', 'Principles of Engineering', 'Engineering Design & Fabrication', 'Graphic Engineering', 'Robotics Engineering',
     'International Business and Cultures', 'Legal and Political Experiences', 'Economics/Social Problems in American Society', 'AP Microeconomics', 'Fundamentals of Sports Medicine', 'Broadcast Writing', 'Advanced Broadcast Writing', 'TV Production', 'Journalism', 'Advanced Journalism Honors' ];
-    var yourcourses = [req.user.class1, req.user.class2, req.user.class3, req.user.class4, req.user.class5, req.user.class6, req.user.class7, req.user.class8, req.user.class9, req.user.class10, req.user.class11, req.user.class12, 
-        req.user.class13, req.user.class14, req.user.class15, req.user.class16, req.user.class17, req.user.class18, req.user.class19, req.user.class20, req.user.class21, req.user.class22, req.user.class23, req.user.class24];
+    var yourcourses = [req.user.eighthgradecourse, req.user.optionII1, req.user.class1, req.user.class2, req.user.class3, req.user.class4, req.user.class5, req.user.class6, req.user.optionII2, req.user.class7, req.user.class8, req.user.class9, req.user.class10, req.user.class11, req.user.class12, req.user.optionII3,
+        req.user.class13, req.user.class14, req.user.class15, req.user.class16, req.user.class17, req.user.class18, req.user.optionII4, req.user.class19, req.user.class20, req.user.class21, req.user.class22, req.user.class23, req.user.class24];
          
     var centurycount = 0;
     for(var i =0;  i<yourcourses.length; i++){
@@ -206,8 +225,8 @@ router.get('/finalschedule', ensureAuthenticated, (req,res) =>{
  
        var checkfinancial = false
     var financialcourses = ['International Business and Cultures', 'Economics/Social Problems in American Society', 'Financial Literacy', 'AP Microeconomics'];
-    var yourcourses = [req.user.class1, req.user.class2, req.user.class3, req.user.class4, req.user.class5, req.user.class6, req.user.class7, req.user.class8, req.user.class9, req.user.class10, req.user.class11, req.user.class12, 
-        req.user.class13, req.user.class14, req.user.class15, req.user.class16, req.user.class17, req.user.class18, req.user.class19, req.user.class20, req.user.class21, req.user.class22, req.user.class23, req.user.class24];
+    var yourcourses = [req.user.eighthgradecourse, req.user.optionII1, req.user.class1, req.user.class2, req.user.class3, req.user.class4, req.user.class5, req.user.class6, req.user.optionII2, req.user.class7, req.user.class8, req.user.class9, req.user.class10, req.user.class11, req.user.class12, req.user.optionII3,
+        req.user.class13, req.user.class14, req.user.class15, req.user.class16, req.user.class17, req.user.class18, req.user.optionII4, req.user.class19, req.user.class20, req.user.class21, req.user.class22, req.user.class23, req.user.class24];
          
     var financialcount = 0;
     for(var i =0;  i<yourcourses.length; i++){
@@ -224,8 +243,8 @@ router.get('/finalschedule', ensureAuthenticated, (req,res) =>{
    //prerequisite check
 
    //languageartsIIcheck
-   var yourcourses = [req.user.class1, req.user.class2, req.user.class3, req.user.class4, req.user.class5, req.user.class6, req.user.class7, req.user.class8, req.user.class9, req.user.class10, req.user.class11, req.user.class12, 
-    req.user.class13, req.user.class14, req.user.class15, req.user.class16, req.user.class17, req.user.class18, req.user.class19, req.user.class20, req.user.class21, req.user.class22, req.user.class23, req.user.class24];
+   var yourcourses = [req.user.eighthgradecourse, req.user.optionII1, req.user.class1, req.user.class2, req.user.class3, req.user.class4, req.user.class5, req.user.class6, req.user.optionII2, req.user.class7, req.user.class8, req.user.class9, req.user.class10, req.user.class11, req.user.class12, req.user.optionII3,
+    req.user.class13, req.user.class14, req.user.class15, req.user.class16, req.user.class17, req.user.class18, req.user.optionII4, req.user.class19, req.user.class20, req.user.class21, req.user.class22, req.user.class23, req.user.class24];
     var la2honorscheck = true;
     for(var i = 0; i<yourcourses.length; i++){
         if(yourcourses[i] == 'Language Arts II' || yourcourses[i] =='Language Arts II Honors'){
@@ -356,7 +375,7 @@ router.get('/finalschedule', ensureAuthenticated, (req,res) =>{
         if(yourcourses[i] == 'AP Calculus BC'){
             APcalcBCcheck = false;
             for(var j = 0; j<i; j++){
-                if(yourcourses[j] == 'AP Calculus AB'||yourcourses[j] == 'Calculus Honors' || yourcourses[j] =='Pre-calculus Honors & Accelerated' ){
+                if(yourcourses[j] == 'AP Calculus AB'||yourcourses[j] == 'Calculus Honors' || yourcourses[j] =='Pre-calculus Honors & Accelerated'|| yourcourses[j] =='Pre-calculus Honors' ){
                     APcalcBCcheck = true;
                 }
             }
@@ -393,7 +412,7 @@ router.get('/finalschedule', ensureAuthenticated, (req,res) =>{
         if(yourcourses[i] == 'AP Statistics'){
             APstatscheck = false;
             for(var j = 0; j<i; j++){
-                if(yourcourses[j] == 'Precalculus'||yourcourses[j] =='Precalculus Honors'){
+                if(yourcourses[j] == 'Pre-calculus'||yourcourses[j] =='Pre-calculus Honors'){
                     APstatscheck = true;
                 }
             }
@@ -1180,14 +1199,13 @@ router.post('/10thgradecurrentcourse', ensureAuthenticated, (req,res) =>{
 });
 
 
-//Handle Post for 9th grade current
-router.post('/9thgradecurrentcourse', ensureAuthenticated, (req,res) =>{
+//Handle Post for 11th grade current
+router.post('/11thgradecurrentcourse', ensureAuthenticated, (req,res) =>{
     const {class12, class13, class14, class15, class16, class17, class18} = req.body;
 
     User.findByIdAndUpdate(
         {_id: req.user._id},
         {
-        class12: class12,
         class13: class13, 
         class14: class14, 
         class15: class15,
@@ -1207,6 +1225,198 @@ router.post('/9thgradecurrentcourse', ensureAuthenticated, (req,res) =>{
     )
     .then(res.redirect('/currentcourse'))
     .catch(err => console.log(err));
+});
+//Handle post for 8th grade final
+router.post('/8thfinalschedule', ensureAuthenticated, (req,res) =>{
+    const {class1, class2, class3, class4, class5, class6, class7, class8, class9, class10, class11, class12, class13, class14, class15, class16, class17, class18,
+    class19, class20, class21, class22, class23, class24, optionII1, optionII2, optionII3, optionII4, eighthgradecourse} = req.body;
+
+    User.findByIdAndUpdate(
+        {_id: req.user._id},
+        {
+            class1:class1,
+            class2:class2,
+            class3:class3,
+            class4:class4,
+            class5:class5,
+            class6:class6,
+            class7:class7,
+            class8:class8,
+            class9:class9,
+            class10:class10,
+            class11:class11,
+            class12:class12,
+            class13:class13,
+            class14:class14,
+            class15:class15,
+            class16:class16,
+            class17:class17,
+            class18:class18,
+            class19:class19,
+            class20:class20,
+            class21:class21,
+            class22:class22,
+            class23:class23,
+            class24:class24,
+            optionII1:optionII1,
+            optionII2:optionII2,
+            optionII3:optionII3,
+            optionII4:optionII4,
+            eighthgradecourse:eighthgradecourse
+
+     },
+        function(err, result){
+            if(err){
+                res.send(err);
+            }else{
+                console.log(result);
+            }
+        }
+
+    )
+    .then(res.redirect('/finalschedule'))
+    .catch(err => console.log(err));
+});
+
+//Handle post for 9th grade final
+router.post('/9thfinalschedule', ensureAuthenticated, (req,res) =>{
+    const {class7, class8, class9, class10, class11, class12, class13, class14, class15, class16, class17, class18,
+    class19, class20, class21, class22, class23, class24, optionII1, optionII2, optionII3, optionII4, eighthgradecourse} = req.body;
+
+    User.findByIdAndUpdate(
+        {_id: req.user._id},
+        {
+            class7:class7,
+            class8:class8,
+            class9:class9,
+            class10:class10,
+            class11:class11,
+            class12:class12,
+            class13:class13,
+            class14:class14,
+            class15:class15,
+            class16:class16,
+            class17:class17,
+            class18:class18,
+            class19:class19,
+            class20:class20,
+            class21:class21,
+            class22:class22,
+            class23:class23,
+            class24:class24,
+            optionII1:optionII1,
+            optionII2:optionII2,
+            optionII3:optionII3,
+            optionII4:optionII4,
+            eighthgradecourse:eighthgradecourse
+
+     },
+        function(err, result){
+            if(err){
+                res.send(err);
+            }else{
+                console.log(result);
+            }
+        }
+
+    )
+    .then(res.redirect('/finalschedule'))
+    .catch(err => console.log(err));
+});
+
+//Handle post for 10th grade final
+router.post('/10thfinalschedule', ensureAuthenticated, (req,res) =>{
+    const {class13, class14, class15, class16, class17, class18,
+    class19, class20, class21, class22, class23, class24, optionII1, optionII2, optionII3, optionII4,eighthgradecourse} = req.body;
+
+    User.findByIdAndUpdate(
+        {_id: req.user._id},
+        {
+            class13:class13,
+            class14:class14,
+            class15:class15,
+            class16:class16,
+            class17:class17,
+            class18:class18,
+            class19:class19,
+            class20:class20,
+            class21:class21,
+            class22:class22,
+            class23:class23,
+            class24:class24,
+            optionII1:optionII1,
+            optionII2:optionII2,
+            optionII3:optionII3,
+            optionII4:optionII4,
+            eighthgradecourse:eighthgradecourse
+
+     },
+        function(err, result){
+            if(err){
+                res.send(err);
+            }else{
+                console.log(result);
+            }
+        }
+
+    )
+    .then(res.redirect('/finalschedule'))
+    .catch(err => console.log(err));
+});
+//Handle post for 8th grade final
+router.post('/11thfinalschedule', ensureAuthenticated, (req,res) =>{
+    const {class19, class20, class21, class22, class23, class24, optionII1, optionII2, optionII3, optionII4,eighthgradecourse} = req.body;
+
+    User.findByIdAndUpdate(
+        {_id: req.user._id},
+        {
+            class19:class19,
+            class20:class20,
+            class21:class21,
+            class22:class22,
+            class23:class23,
+            class24:class24,
+            optionII1:optionII1,
+            optionII2:optionII2,
+            optionII3:optionII3,
+            optionII4:optionII4,
+            eighthgradecourse:eighthgradecourse
+
+     },
+        function(err, result){
+            if(err){
+                res.send(err);
+            }else{
+                console.log(result);
+            }
+        }
+
+    )
+    .then(res.redirect('/finalschedule'))
+    .catch(err => console.log(err));
+});
+
+
+//Handle post for gradecalc
+router.post('/gradecalc', ensureAuthenticated, (req,res) =>{
+    const {gradecalc1, gradecalc2, gradecalc3, targetgrade, } = req.body;
+    var gradetarget
+    if(targetgrade == 'A') gradetarget = 89.5;
+    else if(targetgrade=='B') gradetarget = 79.5;
+    else if(targetgrade == 'C') gradetarget = 69.5;
+    else if (targetgrade == 'D') gradetarget = 59.5;
+    var average;
+    var requiredaverage = 0;
+    if( gradecalc2== null){
+        requiredaverage = ((gradetarget*4)-Math.round(gradecalc1))/3;
+    }
+    else if(gradecalc3 == null){
+        requiredaverage = ((gradetarget * 4) - (Math.round(gradecalc1) + Math.round(gradecalc2))/2)
+    }
+    else {
+        requiredaverage = ((gradetarget*4) - (Math.round(gradecalc1) + Math.round(gradecalc2) + Math.round(gradecalc3)))
+    }
+    res.render('gradecalc', {requiredaverage:requiredaverage});
 });
 //Login Handle
 router.post('/login',  (req,res, next) =>{

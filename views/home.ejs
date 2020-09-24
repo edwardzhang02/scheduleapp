@@ -15,71 +15,103 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
 <head>
 <body>
     <%- include('signedinnav'); -%>
+    <br>
+    <br>
+    <br>
+    <br>
     <br>
     <h1 style="text-align: center; font-family: 'Quicksand', sans-serif;">Welcome back, <%= user.name %>!</h1>
     <br>
     <br>
     <br>
-    <h2 style="text-align: center; font-family: 'Questrial', sans-serif; font-size: 30px; font-weight: bold;">Dashboard:</h2>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-6">
+            <h2 style="text-align: center; font-family: 'Questrial', sans-serif; font-size: 30px; font-weight: bold;">My Courses:</h2>
+        </div>
+        <div class="col-4">
+            <h2 style="text-align: center; font-family: 'Questrial', sans-serif; font-size: 30px; font-weight: bold;">Extra Tools:</h2>
+        </div>
+    </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-3"></div>
+            <div class="col-1"></div>
             <div class="col-6 homecolumns">
                 <a href="pastcourses">
-                    <button type="button" class="btn btn-info" style="margin-top: 45px;">My Past Courses</button>
+                    <button type="button" class="signupbutton" style="margin-top: 37px; width:20%; height:55px">My Past Courses</button>
                 </a>
                 <p class="pcoursestxt">To get started, what courses have you taken already? We'll use this information to determine what courses you are eligible to take in the future, along with helping you 
                     calculate the highest GPA achievable given your courseloads. Click the button to the left to start!
                 </p>
             </div>
-            <div class="col-3"></div>
+            <div class="col-md-4 homecolumns">
+                <a href="gradecalc">
+                    <button type="button" class="signupbutton" style="margin-top: 37px; width:20%; height:55px">Grade Calculator</button>
+                </a>
+                <p class="pcoursestxt" style="margin-top: 37px;">Calculate what grades you need in the next marking periods to get an A, B, or C!
+                </p>
+            </div>
+            <div class="col-1"></div>
         </div>
     </div>
     <br>
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6 homecolumns">
-                <a href="currentcourse"> <button type="button" class="btn btn-info" style="margin-top: 33px;">My Current Courses</button></a>
+            <div class="col-1"></div>
+            <div class="col-md-6 homecolumns">
+                <a href="currentcourse"> <button type="button" class="signupbutton" style="margin-top: 25px; width:20%; height:55px">My Current Courses</button></a>
                 <p class="pcoursestxt">To determine what courses you can take next year, we need to know what courses you're taking this year. Let us know by clicking the button to the left!
                 </p>
             </div>
-            <div class="col-3"></div>
+            <div class="col-md-4 homecolumns">
+                <a href="gpacalc">
+                    <button type="button" class="signupbutton" style="margin-top: 25px; width:20%; height:55px">GPA Calculator</button>
+                </a>
+                <p class="pcoursestxt" style="margin-top: 37px;">Calculate your high school GPA!
+                </p>
+            </div>
+            <div class="col-1"></div>
         </div>
     </div>
     <br>
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6 homecolumns">
-                <a href="classdir"><button type="button " class="btn btn-info btn" style="margin-top: 25px;">Course Directory</button></a>
+            <div class="col-1"></div>
+            <div class="col-md-6 homecolumns">
+                <a href="classdir"><button type="button " class="signupbutton" style="margin-top: 25px; width:20%; height:55px;">Course Directory</button></a>
                 <p class="pcoursestxt">Don't know which courses to pick? Check out the course directory for an organized collection of all the courses WW-P has to offer!</p>
                 <br>
                 <br>
             </div>
-            <div class="col-3"></div>
+            <div class="col-md-4 ">
+            </div>
+            <div class="col-1"></div>
         </div>
-
+    </div>
         <br>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6 homecolumns">
-                <a href="finalschedule"><button type="button " class="btn btn-info btn-lg" style="margin-top: 25px;">My 4-Year Schedule</button></a>
+            <div class="col-1"></div>
+            <div class="col-md-6 homecolumns">
+                <a href="finalschedule"><button type="button " class="signupbutton" style="margin-top: 25px; width:50%; height:70px;">My 4-Year Schedule</button></a>
                 <br>
                 <br>
             </div>
-            <div class="col-3"></div>
+            <div class="col-md-4 ">
+            </div>
+            <div class="col-1"></div>
         </div>
     </div>
     <br>
     <br>
     <br>
     <br>
-
+    <%- include('signedinfooter'); -%>
 </body>

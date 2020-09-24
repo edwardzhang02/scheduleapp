@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" type="text/css" href="style.css" />
+ <title>Untitled</title>
+ <link rel="stylesheet" href="\font-awesome-4.7.0\css\font-awesome.min.css">
+ <link
+ rel="stylesheet"
+ href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+<head>
+<body>
+    <%- include('signedinnav'); -%>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-md-8 homecolumns">
+            <br>
+            <h2 style="font-family: 'Questrial', sans-serif;">GPA Calculator</h2>
+            <br>
+            <form action="/gpacalc" method="POST">
+
+            </form>
+            <div class="row">
+                <div class="col-md-4">
+                    <!-- Class 1 -->
+                    <p><%= user.class1 %> Grade:</p>
+                    <select id="class1grade" name="class1grade" required>
+                        <option value="<%= user.grade1%>">Your Grade: <%= user.grade1%></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                    <!--  Class 4-->
+                    <p><%= user.class4 %> Grade:</p>
+                    <select id="class4grade" name="class4grade" required>
+                        <option value="<%= user.grade4 %>">Your Grade: <%= user.grade4 %></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                    <!--  Class 7-->
+                    <p><%= user.class7 %> Grade:</p>
+                    <select id="class7grade" name="class7grade" required>
+                        <option value="<%= user.grade7 %>">Your Grade: <%= user.grade7 %></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                    <!--  Class 10-->
+                    <p><%= user.class10 %> Grade:</p>
+                    <select id="class10grade" name="class10grade" required>
+                        <option value="<%= user.grade10 %>">Your Grade: <%= user.grade10 %></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                    <!--  Class 13-->
+                    <p><%= user.class13 %> Grade:</p>
+                    <select id="class13grade" name="class13grade" required>
+                        <option value="<%= user.grade13 %>">Your Grade: <%= user.grade13 %></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                    <!--  Class 16-->
+                    <p><%= user.class16 %> Grade:</p>
+                    <select id="class16grade" name="class16grade" required>
+                        <option value="<%= user.grade16 %>">Your Grade: <%= user.grade16 %></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                    <!--  Class 19-->
+                    <p><%= user.class19 %> Grade:</p>
+                    <select id="class19grade" name="class19grade" required>
+                        <option value="<%= user.grade19 %>">Your Grade: <%= user.grade19 %></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                    <!--  Class 22-->
+                    <p><%= user.class22 %> Grade:</p>
+                    <select id="class22grade" name="class22grade" required>
+                        <option value="<%= user.grade22 %>">Your Grade: <%= user.grade22 %></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                </div>
+                
+                <div class="col-md-4">
+                    <!--  Class 2-->
+                    <p><%= user.class2 %> Grade:</p>
+                    <select id="class2grade" name="class2grade" required>
+                        <option value="<%= user.grade2 %>">Your Grade: <%= user.grade2 %></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                    <!--  Class 5-->
+                    <p><%= user.class5 %> Grade:</p>
+                    <select id="class5grade" name="class5grade" required>
+                        <option value="<%= user.grade5 %>">Your Grade: <%= user.grade5 %></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                    <!--  Class 8-->
+                    <p><%= user.class8 %> Grade:</p>
+                    <select id="class8grade" name="class8grade" required>
+                        <option value="<%= user.grade8 %>">Your Grade: <%= user.grade8 %></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                    <!--  Class 11-->
+                    <p><%= user.class11 %> Grade:</p>
+                    <select id="class11grade" name="class11grade" required>
+                        <option value="<%= user.grade11 %>">Your Grade: <%= user.grade11 %></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                    <!--  Class 14-->
+                    <p><%= user.class14 %> Grade:</p>
+                    <select id="class14grade" name="class14grade" required>
+                        <option value="<%= user.grade14 %>">Your Grade: <%= user.grade14 %></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                    <!--  Class 17-->
+                    <p><%= user.class17 %> Grade:</p>
+                    <select id="class17grade" name="class17grade" required>
+                        <option value="<%= user.grade17 %>">Your Grade: <%= user.grade17 %></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                    <!--  Class 20-->
+                    <p><%= user.class20 %> Grade:</p>
+                    <select id="class20grade" name="class20grade" required>
+                        <option value="<%= user.grade20 %>">Your Grade: <%= user.grade20 %></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                    <!--  Class 23-->
+                    <p><%= user.class23 %> Grade:</p>
+                    <select id="class23grade" name="class23grade" required>
+                        <option value="<%= user.grade23 %>">Your Grade: <%= user.grade23 %></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                      <br>
+                      <br>
+                      
+                </div>
+
+                <div class="col-md-4">
+                    <!--  Class 3-->
+                    <p><%= user.class3 %> Grade:</p>
+                    <select id="class3grade" name="class3grade" required>
+                        <option value="<%= user.grade3 %>">Your Grade: <%= user.grade3 %></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                    <!--  Class 6-->
+                    <p><%= user.class6 %> Grade:</p>
+                    <select id="class6grade" name="class6grade" required>
+                        <option value="<%= user.grade6 %>">Your Grade: <%= user.grade6 %></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                    <!--  Class 9-->
+                    <p><%= user.class9 %> Grade:</p>
+                    <select id="class9grade" name="class9grade" required>
+                        <option value="<%= user.grade9 %>">Your Grade: <%= user.grade9 %></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                    <!--  Class 12-->
+                    <p><%= user.class12 %> Grade:</p>
+                    <select id="class12grade" name="class12grade" required>
+                        <option value="<%= user.grade12 %>">Your Grade: <%= user.grade12 %></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                    <!--  Class 15-->
+                    <p><%= user.class15 %> Grade:</p>
+                    <select id="class15grade" name="class15grade" required>
+                        <option value="<%= user.grade15 %>">Your Grade: <%= user.grade15 %></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                    <!--  Class 18-->
+                    <p><%= user.class18 %> Grade:</p>
+                    <select id="class18grade" name="class18grade" required>
+                        <option value="<%= user.grade18 %>">Your Grade: <%= user.grade18 %></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                    <!--  Class 21-->
+                    <p><%= user.class21 %> Grade:</p>
+                    <select id="class21grade" name="class21grade" required>
+                        <option value="<%= user.grade21 %>">Your Grade: <%= user.grade21 %></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                    <!--  Class 24-->
+                    <p><%= user.class24 %> Grade:</p>
+                    <select id="class24grade" name="class24grade" required>
+                        <option value="<%= user.grade24 %>">Your Grade: <%= user.grade24 %></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="">No grade yet</option>
+                      </select>
+                      <br>
+                      <br>
+                </div>
+            </div>
+
+
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col"> <input type="submit" value="Save" class = pastcoursesubmitbutton></div>
+                    <div class="col-4"></div>
+        
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-md-4 homecolumns">
+                        <p style="font-size: 20px; font-family: 'Questrial', sans-serif;">Your Current GPA:</p>
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-md-4 homecolumns">
+                        <p style="font-size: 20px; font-family: 'Questrial', sans-serif;">Your Maximum GPA:</p>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <br>
+                <br>
+            </div>
+
+            
+            </form>
+        <div class="col"></div>
+    </div>
+    <br>
+    <br>
+    <br>
+</body>

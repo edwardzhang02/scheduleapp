@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" type="text/css" href="style.css" />
+ <title>Untitled</title>
+ <link rel="stylesheet" href="\font-awesome-4.7.0\css\font-awesome.min.css">
+ <link
+ rel="stylesheet"
+ href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+<head>
+<body>
+    <%- include('signedinnav'); -%>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-6 homecolumns">
+            <br>
+            <h2 style="font-family: 'Questrial', sans-serif;">Grade Calculator</h2>
+            <br>
+            <form action="/gradecalc" method="POST" style="margin-left: 70px; margin-right: 70px">
+                <h4 style="font-family: 'Questrial', sans-serif; font-size: 15px; text-align: left; margin-left:px">First MP Grade</h4>
+                <input type="text" name = 'gradecalc1' id='gradecalc1' placeholder="(numerical value)">
+                <h4 style="font-family: 'Questrial', sans-serif; font-size: 15px; text-align: left; margin-left:px">Second MP Grade</h4>
+                <input type="text" name = 'gradecalc2' id='gradecalc2' placeholder="(numerical value)">
+                <h4 style="font-family: 'Questrial', sans-serif; font-size: 15px; text-align: left; margin-left:px">Third MP Grade</h4>
+                <input type="text" name = 'gradecalc3' id='gradecalc3' placeholder="(numerical value)">
+                <h4 style="font-family: 'Questrial', sans-serif; font-size: 15px; text-align: left; margin-left:px">Target Grade</h4>
+                <div style="text-align: left;">
+                    <select id="targetgrade" name="targetgrade" required>
+                        <option value="">Select a letter grade</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                      </select>
+                </div>
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col"> <input type="submit" value="Save" class = pastcoursesubmitbutton></div>
+                    <div class="col-4"></div>
+        
+                </div>
+            </form>
+            <br><br>
+
+          
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-md-4 homecolumns">
+                    <h1 style="font-family: 'Quicksand', sans-serif; font-size:20px; text-align: center; ">Average Numberical Grade Required</h1>
+                    <%= requiredaverage%>
+                    <!-- ejs tag -->
+                </div>
+                <div class="col"></div>
+            </div>
+            <br>
+
+        </div>
+        <div class="col"></div>
+    </div>
+    <br>
+    <br>
+    <br>
+    
+
+    <%- include('signedinfooter'); -%>
+</body>

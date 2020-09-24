@@ -228,6 +228,14 @@ const UserSchema = new mongoose.Schema({
     optionII4:{
         type:String,
         default:null
+    },
+    eighthgradecourse:{
+        type:String,
+        default:null
+    },
+    GPA:{
+        type:Number,
+        default:null
     }
 
 });

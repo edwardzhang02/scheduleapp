@@ -23,10 +23,12 @@
        display:none;
    }
        </style>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
 
 </head>
 <body>
-    <div class=loginhome>
+    <div class=home>
         <%- include('nav'); -%>
         <br>
         <br>
@@ -35,14 +37,16 @@
         
         <form action="/login" method = POST class = signinform>
             <%- include('./partials/messages') -%>
-            <h1 class = logintext>Login</h1>
+            <h1 class = logintext style="color: #ac8c54">Login</h1>
             <label for="signin-username">Email</label>
             <input type="text" name = "email" id = "email">
             <label for="signin-password">Password</label>
             <input type="password" name="password" id="password">
-            <input type="submit" value="Sign In" class="signupbutton"> 
             <br>
-            <button type="button" class="btn btn-danger forgotpwordbtn">Forgot Password?</button>
+            <input type="submit" value="Sign In" class="signupbutton" style="font-family: 'Quicksand', sans-serif;"> 
+            <br>
+            <br>
+            <button type="button" class=" forgotpwordbtn ">Forgot Password?</button>
             <br>
             <br>
 
@@ -51,6 +55,10 @@
             <br>
             <br>
             <br>
+            <br>
+            <br>
+            <br>
 
     </div>
+    <%- include('footer'); -%>
 </body>
